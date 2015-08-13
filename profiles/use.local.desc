@@ -1,0 +1,30 @@
+# This file is deprecated as per GLEP 56 in favor of metadata.xml. Please add
+# your descriptions to your package's metadata.xml ONLY.
+# * generated automatically using pmaint *
+
+dev-lang/dmd:tools - Pulls in dev-util/dlang-tools
+dev-libs/GtkD:gstreamer - Build additional bindings to media-libs/gstreamer
+dev-libs/GtkD:libgda - Build additional bindings to gnome-extra/libgda
+dev-libs/GtkD:opengl - Build additional bindings to x11-libs/gtkglext
+dev-libs/GtkD:sourceview - Build additional bindings to x11-libs/gtksourceview
+dev-libs/GtkD:vte - Build additonal bindings to x11-libs/vte
+dev-util/dlang-tools:ddemangle - An improved D symbol demangler. Replaces all occurrences of mangled D symbols in the input with their unmangled form, and writes the result to standard output.
+dev-util/dlang-tools:detab - Replace tabs with spaces, and remove trailing whitespace from lines.
+dev-util/dlang-tools:dman - Look up D topics in the online manual. (Requires dmd as a build dependency to create the index.)
+dev-util/dlang-tools:dustmite - DustMite is a tool which minimizes D source code. It was inspired by Tigris Delta and a thread on digitalmars.D.learn. DustMite will parse the source code into a simple hierarchy, and attempt to shrink it by deleting fragments iteratively, as long as the result satisfies a user-specified condition.
+dev-util/dlang-tools:rdmd - rdmd is a companion to the dmd compiler that simplifies the typical edit-compile-link-run or edit-make-run cycle to a rapid edit-run cycle. Like make and other tools, rdmd uses the relative dates of the files involved to minimize the amount of work necessary. Unlike make, rdmd tracks dependencies and freshness without requiring additional information from the user.
+sys-devel/gcc:awt - Useful only when building GCJ, this enables Abstract Window Toolkit (AWT) peer support on top of GTK+
+sys-devel/gcc:d - Enable support for the D programming language
+sys-devel/gcc:fixed-point - Enable fixed-point arithmetic support for MIPS targets in gcc (Warning: significantly increases compile time!)
+sys-devel/gcc:go - Build the GCC Go language frontend.
+sys-devel/gcc:graphite - Add support for the framework for loop optimizations based on a polyhedral intermediate representation
+sys-devel/gcc:libssp - Build SSP support into a dedicated library rather than use the code in the C library (DO NOT ENABLE THIS IF YOU DON'T KNOW WHAT IT DOES)
+sys-devel/gcc:mudflap - Add support for mudflap, a pointer use checking library
+sys-devel/gcc:multislot - Allow for SLOTs to include minor version (3.3.4 instead of just 3.3)
+sys-devel/gcc:nopie - Disable PIE support (NOT FOR GENERAL USE)
+sys-devel/gcc:nossp - Disable SSP support (NOT FOR GENERAL USE)
+sys-devel/gcc:objc - Build support for the Objective C code language
+sys-devel/gcc:objc++ - Build support for the Objective C++ language
+sys-devel/gcc:objc-gc - Build support for the Objective C code language Garbage Collector
+sys-devel/gcc:regression-test - Run the testsuite and install the results (requires FEATURES=test)
+sys-devel/gcc:sanitize - Build support various sanitizer functions (ASAN/TSAN/etc...)
