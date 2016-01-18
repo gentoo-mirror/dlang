@@ -1,17 +1,17 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 app-arch/unzip dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-0_16? ( dev-lang/ldc2:0.16= )
+DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 app-arch/unzip dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) !amd64x86? ( ldc2-0_16? ( dev-lang/ldc2:0.16= ) )
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=5
 HOMEPAGE=http://dlang.org/
 IUSE=doc examples tools dmd-2_067 dmd-2_068 dmd-2_069 ldc2-0_16 abi_x86_32 abi_x86_64
-KEYWORDS=-* ~amd64 ~x86
+KEYWORDS=-* amd64 x86
 LICENSE=DMD
 PDEPEND=tools? ( >=dev-util/dlang-tools-2.069.1 )
-RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-0_16? ( dev-lang/ldc2:0.16= )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) !amd64x86? ( ldc2-0_16? ( dev-lang/ldc2:0.16= ) )
 REQUIRED_USE=^^ ( dmd-2_067 dmd-2_068 dmd-2_069 ldc2-0_16 ) || ( abi_x86_32 abi_x86_64 )
 RESTRICT=mirror
 SLOT=2.069
 SRC_URI=mirror://aws/2015/dmd.2.069.1.zip
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:dlang src_compile:- src_test:- src_install:-
-_eclasses_=dlang	a5b2c13a93ee5625954c140473982d83	dlang-compilers	c7ddddfc5d7ebd743d661cc8bc342187	eutils	d9bd2ddd85a58e470b49ca997e255a4c	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	3972ca401cf7dbb430df9995f5d8d580	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=c9a7d92583ef8f98b816c25b10d0db1e
+_eclasses_=dlang	a5b2c13a93ee5625954c140473982d83	dlang-compilers	bcbe8366012f0f9a37dfed9bb5b87ae0	eutils	d9bd2ddd85a58e470b49ca997e255a4c	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	3972ca401cf7dbb430df9995f5d8d580	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=4b7c16211cafb1a1544c899ab046e18b
