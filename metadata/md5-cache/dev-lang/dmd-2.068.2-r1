@@ -1,5 +1,5 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 app-arch/unzip dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
+DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=5
 HOMEPAGE=http://dlang.org/
@@ -7,11 +7,11 @@ IUSE=doc examples tools dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_
 KEYWORDS=-* amd64 x86
 LICENSE=DMD
 PDEPEND=tools? ( >=dev-util/dlang-tools-2.068.2 )
-RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
 REQUIRED_USE=^^ ( dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 gdc-4_8_3 gdc-4_8_4 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 ) || ( abi_x86_32 abi_x86_64 )
 RESTRICT=mirror
 SLOT=2.068
 SRC_URI=mirror://aws/2015/dmd.2.068.2.zip
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:dlang src_compile:- src_test:- src_install:-
 _eclasses_=dlang	97c0d5cdacee97dc61affac143069b66	dlang-compilers	bcbe8366012f0f9a37dfed9bb5b87ae0	eutils	7332d4dd366dcd51c0014dde21f21897	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	3972ca401cf7dbb430df9995f5d8d580	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=fb9fb7b35eedb7403e2e9888d131a207
+_md5_=995f111c4fd3ec996f4fb885f28fb984

@@ -1,16 +1,16 @@
 DEFINED_PHASES=compile install postinst postrm prepare test
-DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 app-arch/unzip
+DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=5
 HOMEPAGE=http://dlang.org/
 IUSE=doc examples abi_x86_32 abi_x86_64
 KEYWORDS=-* amd64 x86
 LICENSE=DMD
-RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-admin/eselect-dlang-20140709 !dev-lang/dmd-bin
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
 REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 )
 RESTRICT=mirror
 SLOT=2.064
 SRC_URI=mirror://aws/2013/dmd.2.064.2.zip
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_compile:- src_test:- src_install:-
 _eclasses_=eutils	7332d4dd366dcd51c0014dde21f21897	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	3972ca401cf7dbb430df9995f5d8d580	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85
-_md5_=40179b2e73f9334c312fa6f37e895afb
+_md5_=a38a1c0c6226b1f185ac12e040734346

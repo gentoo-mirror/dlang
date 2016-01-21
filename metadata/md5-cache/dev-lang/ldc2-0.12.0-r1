@@ -1,13 +1,13 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=>=dev-util/cmake-2.8 >=sys-devel/llvm-3.1-r2 >=dev-libs/libconfig-1.4.7 >=app-admin/eselect-dlang-20140709 sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
+DEPEND=>=dev-util/cmake-2.8 >=sys-devel/llvm-3.1-r2 >=dev-libs/libconfig-1.4.7 >=app-eselect/eselect-dlang-20140709 sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 )
 DESCRIPTION=LLVM D Compiler
 EAPI=5
 HOMEPAGE=https://ldc-developers.github.com/ldc
 KEYWORDS=x86 amd64 ~ppc64
 LICENSE=BSD
-RDEPEND=>=sys-devel/llvm-3.1-r2 >=dev-libs/libconfig-1.4.7 >=app-admin/eselect-dlang-20140709
+RDEPEND=>=sys-devel/llvm-3.1-r2 >=dev-libs/libconfig-1.4.7 >=app-eselect/eselect-dlang-20140709
 SLOT=0.12/0
 SRC_URI=https://github.com/ldc-developers/ldc/releases/download/v0.12.0/ldc-0.12.0-src.tar.gz
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:- src_compile:- src_test:cmake-utils src_install:-
 _eclasses_=cmake-utils	b657a2689df4f46725711250cf9c8a32	eutils	7332d4dd366dcd51c0014dde21f21897	flag-o-matic	85dc1eac3c64d8141374490ed64122e5	multilib	3972ca401cf7dbb430df9995f5d8d580	toolchain-funcs	7a212e5e01adfa4805c9978366e6ee85	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=2c193c3d0aefb9ef26191a16e34b7438
+_md5_=bd37e356085b145730755a71f1ab68ba
