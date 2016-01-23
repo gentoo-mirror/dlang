@@ -7,4 +7,4 @@ LICENSE=GPL-2
 RDEPEND=app-admin/eselect !app-admin/eselect-dlang
 SLOT=0
 _eclass_exported_funcs=src_install:-
-_md5_=12531c219c5c1a413980e0df623eddb0
+_md5_=d5776d1d6902dcfab43295be16f46f5f
