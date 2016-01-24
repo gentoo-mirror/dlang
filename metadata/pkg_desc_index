@@ -1,7 +1,7 @@
 app-eselect/eselect-dlang 20160121-r1: Eselect module for management of multiple D versions
 dev-lang/dmd 2.063.2 2.064.2 2.065.0 2.066.1 2.067.1 2.068.2-r1 2.069.1: Reference compiler for the D programming language
 dev-lang/ldc2 0.12.0-r1 0.12.1-r1 0.13.0-r1 0.14.0-r1 0.14.0-r2 0.15.1-r1 0.16.0_alpha4 0.16.0 0.16.1: LLVM D Compiler
-dev-libs/GtkD 2.4.2 3.1.5: D binding and OO wrapper of GTK+ and is released on the LGPL license
+dev-libs/GtkD 2.4.2 3.1.5 3.2.2: D binding and OO wrapper of GTK+ and is released on the LGPL license
 dev-util/DCD 0.7.0 0.7.5: Auto-complete program for the D programming language
 dev-util/dfmt 0.3.6: Dfmt is a formatter for D source code
 dev-util/dlang-tools 2.064.2 2.065.0 2.066.1 2.067.1 2.068.2 2.069.1: Ancilliary tools for the D programming language compiler
