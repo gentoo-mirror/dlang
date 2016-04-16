@@ -1,0 +1,17 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare test
+DEPEND=dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_071? ( dev-lang/dmd:2.071= ) gdc-4_8_5? ( =sys-devel/gcc-4.8.5*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= ) ldc2-0_16? ( dev-lang/ldc2:0.16= ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
+DESCRIPTION=Reference compiler for the D programming language
+EAPI=5
+HOMEPAGE=http://dlang.org/
+IUSE=abi_x86_32 abi_x86_64 dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 dmd-2_070 dmd-2_071 gdc-4_8_5 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 ldc2-0_16 ldc2-0_17 doc examples static-libs tools
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=DMD
+PDEPEND=tools? ( >=dev-util/dlang-tools-2.068.2 )
+RDEPEND=dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_071? ( dev-lang/dmd:2.071= ) gdc-4_8_5? ( =sys-devel/gcc-4.8.5*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= ) ldc2-0_16? ( dev-lang/ldc2:0.16= ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 dmd-2_070 dmd-2_071 gdc-4_8_5 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 ldc2-0_16 ldc2-0_17 )
+RESTRICT=mirror
+SLOT=2.068
+SRC_URI=mirror://aws/2015/dmd.2.068.2.linux.tar.xz
+_eclass_exported_funcs=pkg_postrm:dmd pkg_postinst:dmd src_prepare:dmd src_configure:dlang src_compile:dmd src_test:dmd src_install:dmd
+_eclasses_=dlang	ce087b2d7fad2da0995639639ed749c8	dlang-compilers	bdc47114e833b7c171c526c78cd7eca2	dmd	d1b13004d0353c37ecfa3512881f021d	eutils	9d81603248f2ba3ec59124320d123e5e	flag-o-matic	d270fa247153df66074f795fa42dba3e	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	23ae8c186171e6476af098d2a50d0ee0	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=920ae122a40a8f9772be77048ee9f89e

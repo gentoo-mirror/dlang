@@ -1,17 +1,17 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
+DEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_5? ( =sys-devel/gcc-4.8.5*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=5
 HOMEPAGE=http://dlang.org/
-IUSE=doc examples tools dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 gdc-4_8_3 gdc-4_8_4 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 abi_x86_32 abi_x86_64
+IUSE=doc examples tools dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 gdc-4_8_5 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 abi_x86_32 abi_x86_64
 KEYWORDS=-* amd64 x86
 LICENSE=DMD
 PDEPEND=tools? ( >=dev-util/dlang-tools-2.068.2 )
-RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_3? ( =sys-devel/gcc-4.8.3*[d] ) gdc-4_8_4? ( =sys-devel/gcc-4.8.4*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
-REQUIRED_USE=^^ ( dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 gdc-4_8_3 gdc-4_8_4 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 ) || ( abi_x86_32 abi_x86_64 )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin dmd-2_063? ( dev-lang/dmd:2.063= ) dmd-2_064? ( dev-lang/dmd:2.064= ) dmd-2_065? ( dev-lang/dmd:2.065= ) dmd-2_066? ( dev-lang/dmd:2.066= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) gdc-4_8_5? ( =sys-devel/gcc-4.8.5*[d] ) ldc2-0_12? ( dev-lang/ldc2:0.12= ) ldc2-0_13? ( dev-lang/ldc2:0.13= ) ldc2-0_14? ( dev-lang/ldc2:0.14= ) ldc2-0_15? ( dev-lang/ldc2:0.15= )
+REQUIRED_USE=^^ ( dmd-2_063 dmd-2_064 dmd-2_065 dmd-2_066 dmd-2_067 dmd-2_068 dmd-2_069 gdc-4_8_5 ldc2-0_12 ldc2-0_13 ldc2-0_14 ldc2-0_15 ) || ( abi_x86_32 abi_x86_64 )
 RESTRICT=mirror
 SLOT=2.068
 SRC_URI=mirror://aws/2015/dmd.2.068.2.zip
 _eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:dlang src_compile:- src_test:- src_install:-
-_eclasses_=dlang	6abe4626c04ff6cc01b78ccba46291b7	dlang-compilers	b2c435c98dd7679481e517cc1454b198	eutils	9d81603248f2ba3ec59124320d123e5e	flag-o-matic	d270fa247153df66074f795fa42dba3e	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	23ae8c186171e6476af098d2a50d0ee0	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=dlang	ce087b2d7fad2da0995639639ed749c8	dlang-compilers	bdc47114e833b7c171c526c78cd7eca2	eutils	9d81603248f2ba3ec59124320d123e5e	flag-o-matic	d270fa247153df66074f795fa42dba3e	multibuild	742139c87a9fa3766f0c2b155e5522bf	multilib	23ae8c186171e6476af098d2a50d0ee0	multilib-build	8fe2e81aeb36cdf8a6cc5f50443879cc	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=b95f3acd44bba283db420d5026b5eae4
