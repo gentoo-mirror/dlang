@@ -206,7 +206,7 @@ dlang_convert_ldflags() {
 		# gc-sections breaks executables for some versions of D.
 		# See: https://issues.dlang.org/show_bug.cgi?id=879
 		if [[ "${DLANG_VENDOR}" == "DigitalMars" ]]; then
-			if version_is_at_least 2.071 $DLANG_VERSION; then
+			if version_is_at_least 2.072 $DLANG_VERSION; then
 				echo "${flags[@]}"
 			else
 				echo "${flags[@]} ${repl}--no-gc-sections"
@@ -230,9 +230,10 @@ dlang_system_imports() {
 	if [[ "${DLANG_VENDOR}" == "DigitalMars" ]]; then
 		echo "/opt/dmd-${DC_VERSION}/import"
 	elif [[ "${DLANG_VENDOR}" == "GNU" ]]; then
-		echo "/usr/lib/gcc/${__DLANG_CHOST}/${DC_VERSION}/include/d"
+		echo "/usr/lib/gcc/${CHOST_default}/${DC_VERSION}/include/d"
 	elif [[ "${DLANG_VENDOR}" == "LDC" ]]; then
 		echo "/opt/ldc2-${DC_VERSION}/include/d"
+		echo "/opt/ldc2-${DC_VERSION}/include/d/ldc"
 	else
 		die "Could not detect D compiler vendor!"
 	fi
@@ -320,10 +321,10 @@ __dlang_filter_compilers() {
 		dc_version="${__dlang_dmd_frontend_versionmap[${index}]}"
 		mapping="${__dlang_dmd_frontend_archmap[${index}]}"
 		iuse=dmd-$(replace_all_version_separators _ $dc_version)
-		if [ "${DLANG_PACKAGE_TYPE}" == "single" ]; then
-			depend=""
-		else
+		if [ "${DLANG_PACKAGE_TYPE}" == "multi" ]; then
 			depend="[${MULTILIB_USEDEP}]"
+		else
+			depend=""
 		fi
 		depend="$iuse? ( dev-lang/dmd:$dc_version=$depend )"
 		__dlang_compiler_masked_archs_for_version_range "$iuse" "$depend" "$mapping" "$1" "$2"
@@ -388,9 +389,6 @@ __dlang_filter_versions() {
 }
 __dlang_filter_versions
 
-# We will need the real CHOST to find GDC and its library path.
-__DLANG_CHOST="${CHOST}"
-
 __dlang_phase_wrapper() {
 	dlang_phase() {
 		if declare -f d_src_${1} >/dev/null ; then
@@ -441,24 +439,25 @@ __dlang_compiler_to_dlang_version() {
 }
 
 __dlang_build_configurations() {
-	local variants=() use_flag
+	local variants use_flag
+
 	for use_flag in ${USE}; do
 		case ${use_flag} in
 			dmd-* | gdc-* | ldc-* | ldc2-*)
 				if [[ "${DLANG_PACKAGE_TYPE}" == "single" ]]; then
-					variants+=("default-${use_flag//_/.}")
+					variants="default-${use_flag//_/.}"
 				else
 					for abi in $(multilib_get_enabled_abis); do
-						variants+=("${abi}-${use_flag//_/.}")
+						variants="${variants} ${abi}-${use_flag//_/.}"
 					done
 				fi
 				;;
 		esac
 	done
-	if [ ${#variants[@]} -eq 0 ]; then
+	if [[ -z ${variants} ]]; then
 		die "At least one compiler USE-flag must be selected. This should be checked by REQUIRED_USE in this package."
 	fi
-	echo "${variants[@]}"
+	echo ${variants}
 }
 
 __dlang_use_build_vars() {
@@ -480,19 +479,24 @@ __dlang_use_build_vars() {
 	if [[ "${DLANG_VENDOR}" == "DigitalMars" ]]; then
 		export DC="/opt/${DC}-${DC_VERSION}/bin/dmd"
 		export DMD="${DC}"
-		export LIBDIR_${ABI}="../opt/dmd-${DC_VERSION}/lib${MODEL}"
+		# "lib" on pure x86, "lib{32,64}" on amd64 (and multilib)
+		if has_multilib_profile || [[ "${MODEL}" == "64" ]]; then
+			export LIBDIR_${ABI}="../opt/dmd-${DC_VERSION}/lib${MODEL}"
+		else
+			export LIBDIR_${ABI}="../opt/dmd-${DC_VERSION}/lib"
+		fi
 		export DCFLAGS="${DMDFLAGS}"
 		export DLANG_LINKER_FLAG="-L"
 		export DLANG_SO_FLAGS="-shared -defaultlib=libphobos2.so -fPIC"
 		export DLANG_OUTPUT_FLAG="-of"
 		export DLANG_VERSION_FLAG="-version"
 	elif [[ "${DLANG_VENDOR}" == "GNU" ]]; then
-		export DC="/usr/${__DLANG_CHOST}/gcc-bin/${DC_VERSION}/${__DLANG_CHOST}-gdc"
-		export DMD="/usr/${__DLANG_CHOST}/gcc-bin/${DC_VERSION}/${__DLANG_CHOST}-gdmd"
+		export DC="/usr/${CHOST_default}/gcc-bin/${DC_VERSION}/${CHOST_default}-gdc"
+		export DMD="/usr/${CHOST_default}/gcc-bin/${DC_VERSION}/${CHOST_default}-gdmd"
 		if [[ "${DLANG_PACKAGE_TYPE}" == "multi" ]] && multilib_is_native_abi; then
-			export LIBDIR_${ABI}="lib/gcc/${__DLANG_CHOST}/${DC_VERSION}"
+			export LIBDIR_${ABI}="lib/gcc/${CHOST_default}/${DC_VERSION}"
 		else
-			export LIBDIR_${ABI}="lib/gcc/${__DLANG_CHOST}/${DC_VERSION}/${MODEL}"
+			export LIBDIR_${ABI}="lib/gcc/${CHOST_default}/${DC_VERSION}/${MODEL}"
 		fi
 		export DCFLAGS="${GDCFLAGS}"
 		export DLANG_LINKER_FLAG="-Xlinker "

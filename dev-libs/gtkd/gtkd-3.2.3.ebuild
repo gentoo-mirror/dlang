@@ -1,4 +1,4 @@
-# Copyright 1999-2015 Gentoo Foundation
+# Copyright 1999-2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -8,26 +8,26 @@ DESCRIPTION="D binding and OO wrapper of GTK+ and is released on the LGPL licens
 HOMEPAGE="http://gtkd.org/"
 LICENSE="LGPL-3"
 
-SLOT="2"
-KEYWORDS="x86 amd64"
-SRC_URI="http://gtkd.org/Downloads/sources/${P}.zip"
+SLOT="3"
+KEYWORDS="~x86 ~amd64"
+SRC_URI="http://gtkd.org/Downloads/sources/GtkD-${PV}.zip"
 
-DLANG_VERSION_RANGE="2.063-2.064 2.066-"
+DLANG_VERSION_RANGE="2.064 2.066-"
 DLANG_PACKAGE_TYPE="multi"
 
 inherit eutils dlang
 
 DEPEND="app-arch/unzip"
 RDEPEND="
-	>=x11-libs/gtk+-3.10:3[${MULTILIB_USEDEP}]
-	sourceview? ( >=x11-libs/gtksourceview-3.10:3.0 )
-	gstreamer? ( >=media-libs/gstreamer-1.2:1.0 )
+	>=x11-libs/gtk+-3.18:3[${MULTILIB_USEDEP}]
+	sourceview? ( >=x11-libs/gtksourceview-3.18:3.0 )
+	gstreamer? ( >=media-libs/gstreamer-1.6:1.0 )
 	vte? ( >=x11-libs/vte-0.37.4:2.91 )
 "
 
-GTKD_USE_FLAGS=(gtk  opengl sourceview libgda  gstreamer    vte   )
-GTKD_LIB_NAMES=(gtkd gtkdgl gtkdsv     gtkdgda gstreamerd   vted  )
-GTKD_SRC_DIRS=( src  srcgl  srcsv      srcgda  srcgstreamer srcvte)
+GTKD_USE_FLAGS=(gtk  opengl sourceview gstreamer    vte   )
+GTKD_LIB_NAMES=(gtkd gtkdgl gtkdsv     gstreamerd   vted  )
+GTKD_SRC_DIRS=( src  srcgl  srcsv      srcgstreamer srcvte)
 IUSE="${GTKD_USE_FLAGS[@]:1} static-libs"
 
 MAJOR=$(get_major_version)
@@ -68,6 +68,10 @@ d_src_compile() {
 	foreach_used_component compile_libs
 }
 
+d_src_test() {
+	emake LINKERFLAG="${DLANG_LINKER_FLAG}" output="${DLANG_OUTPUT_FLAG}\$@" test
+}
+
 d_src_install() {
 	install_libs() {
 		# Install the shared library version of the component
@@ -92,7 +96,7 @@ d_src_install_all() {
 	dodoc AUTHORS README
 
 	# Include files
-	insinto "${DLANG_IMPORT_DIR}/gtkd-${MAJOR}"
+	insinto "${DLANG_IMPORT_DIR}/${PN}-${MAJOR}"
 
 	install_headers() {
 		files="${SRC_DIR}/*"
