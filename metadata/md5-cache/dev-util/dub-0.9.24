@@ -11,5 +11,5 @@ REQUIRED_USE=^^ ( dmd-2_066? ( !arm ) dmd-2_067? ( !arm ) dmd-2_068? ( !arm ) dm
 SLOT=0
 SRC_URI=https://codeload.github.com/D-Programming-Language/dub/tar.gz/v0.9.24 -> dub-0.9.24.tar.gz
 _eclass_exported_funcs=src_prepare:- src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
-_eclasses_=dlang	ce087b2d7fad2da0995639639ed749c8	dlang-compilers	bdc47114e833b7c171c526c78cd7eca2	eutils	792f83d5ec9536cb5ccef375469d8bde	flag-o-matic	d270fa247153df66074f795fa42dba3e	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	d513d423d449877e49d99af3f7af7acb	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_eclasses_=dlang	ce087b2d7fad2da0995639639ed749c8	dlang-compilers	bdc47114e833b7c171c526c78cd7eca2	eutils	792f83d5ec9536cb5ccef375469d8bde	flag-o-matic	d270fa247153df66074f795fa42dba3e	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	c9d9187f4caa4026a0ceddd8dfceb3c1	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
 _md5_=71088c8f24a8446e72d4d2c1eb86245f
