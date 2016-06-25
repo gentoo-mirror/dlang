@@ -8,6 +8,6 @@ LICENSE=BSD
 RDEPEND=>=dev-libs/libconfig-1.4.7 >=app-eselect/eselect-dlang-20140709
 SLOT=1.0/1
 SRC_URI=https://github.com/ldc-developers/ldc/releases/download/v1.0.0/ldc-1.0.0-src.tar.gz
-_eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:- src_configure:- src_compile:- src_test:cmake-utils src_install:-
+_eclass_exported_funcs=pkg_postrm:- pkg_postinst:- src_prepare:cmake-utils src_configure:- src_compile:- src_test:cmake-utils src_install:-
 _eclasses_=cmake-utils	ac5bd012586c6cf0d9826400d9de2830	eutils	792f83d5ec9536cb5ccef375469d8bde	flag-o-matic	d270fa247153df66074f795fa42dba3e	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	c9d9187f4caa4026a0ceddd8dfceb3c1	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=5d76a967c4f45906e9bf1cd413673e09
+_md5_=29fa6b4733532bbd6d97e4201ee5f7af
