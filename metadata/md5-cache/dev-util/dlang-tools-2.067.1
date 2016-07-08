@@ -1,7 +1,7 @@
 DEFINED_PHASES=compile configure install prepare test
 DEPEND=dmd-2_067? ( dev-lang/dmd:2.067= ) ldc2-0_16? ( dev-lang/ldc2:0.16= )
 DESCRIPTION=Ancilliary tools for the D programming language compiler
-EAPI=5
+EAPI=6
 HOMEPAGE=http://dlang.org/
 IUSE=+rdmd +ddemangle detab +dman dustmite dmd-2_067 ldc2-0_16
 KEYWORDS=amd64 x86
@@ -12,5 +12,5 @@ RESTRICT=mirror
 SLOT=0
 SRC_URI=https://codeload.github.com/D-Programming-Language/tools/tar.gz/v2.067.1 -> dlang-tools-2.067.1.tar.gz dman? ( https://codeload.github.com/D-Programming-Language/dmd/tar.gz/v2.067.1 -> dmd-2.067.1.tar.gz https://codeload.github.com/D-Programming-Language/druntime/tar.gz/v2.067.1 -> druntime-2.067.1.tar.gz https://codeload.github.com/D-Programming-Language/phobos/tar.gz/v2.067.1 -> phobos-2.067.1.tar.gz https://codeload.github.com/D-Programming-Language/dlang.org/tar.gz/v2.067.1 -> dlang.org-2.067.1.tar.gz )
 _eclass_exported_funcs=src_prepare:- src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
-_eclasses_=dlang	a0bb666ab1cc7490bee13d5c5c6749f7	dlang-compilers	214a6d4d1b13d80e09a7a07190842fe8	eutils	792f83d5ec9536cb5ccef375469d8bde	flag-o-matic	8632fcd33a047954f007dee9a137bdcc	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	82165206dedb2075f9a0fb8f9b1f9441	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=a9e2ed87489c5fe34260d7426adc1e6b
+_eclasses_=dlang	feede87932c720d2e5ffc7a2c296cffc	dlang-compilers	214a6d4d1b13d80e09a7a07190842fe8	eutils	792f83d5ec9536cb5ccef375469d8bde	flag-o-matic	8632fcd33a047954f007dee9a137bdcc	multilib	d062ae4ba2fc40a19c11de2ad89b6616	toolchain-funcs	82165206dedb2075f9a0fb8f9b1f9441	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=a4946401be33ca4749c9f024b84b7a1f
