@@ -1,16 +1,16 @@
 DEFINED_PHASES=compile configure install prepare test
-DEPEND=dmd-2_070? ( dev-lang/dmd:2.070= ) ldc2-1_0? ( dev-lang/ldc2:1.0= )
+DEPEND=dmd-2_072? ( dev-lang/dmd:2.072= )
 DESCRIPTION=Ancilliary tools for the D programming language compiler
 EAPI=6
 HOMEPAGE=http://dlang.org/
-IUSE=+rdmd +ddemangle detab dustmite dmd-2_070 ldc2-1_0
-KEYWORDS=amd64 x86
+IUSE=+ddemangle detab dustmite +rdmd dmd-2_072
+KEYWORDS=~amd64 ~x86
 LICENSE=Boost-1.0
-RDEPEND=dmd-2_070? ( dev-lang/dmd:2.070= ) ldc2-1_0? ( dev-lang/ldc2:1.0= )
-REQUIRED_USE=|| ( rdmd ddemangle detab dustmite ) ^^ ( dmd-2_070 ldc2-1_0 )
+RDEPEND=dmd-2_072? ( dev-lang/dmd:2.072= )
+REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_072 )
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://codeload.github.com/D-Programming-Language/tools/tar.gz/v2.070.2 -> dlang-tools-2.070.2.tar.gz
+SRC_URI=https://codeload.github.com/D-Programming-Language/tools/tar.gz/v2.072.1 -> dlang-tools-2.072.1.tar.gz
 _eclass_exported_funcs=src_prepare:dlang src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
 _eclasses_=dlang	f1216d5c4a10b783b45c1a9c77ee589d	dlang-compilers	abba2820a0331886c6aa93451b4d6cb1	eutils	b83a2420b796f7c6eff682679d08fe25	flag-o-matic	7366202dd55cb8f018f5d450d54e7749	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
-_md5_=e16040cd17b01ee4de76b383efce839e
+_md5_=154e4449045043a0ed2541e8c7c11897
