@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND==sys-devel/gcc-4.9.4*[d]
+DESCRIPTION=Wrapper script for gdc that emulates the dmd command
+EAPI=6
+HOMEPAGE=http://www.gdcproject.org/
+KEYWORDS=~amd64 ~arm ~arm64 ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~x86 ~amd64-fbsd ~x86-fbsd
+LICENSE=GPL-3+
+RDEPEND==sys-devel/gcc-4.9.4*[d]
+SLOT=4.9.4
+SRC_URI=https://codeload.github.com/D-Programming-GDC/GDMD/tar.gz/v2.068.2 -> gdmd-2.068.2.tar.gz
+_eclass_exported_funcs=src_prepare:dlang src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
+_eclasses_=dlang	749ec17829980f13e29233127d95adcd	dlang-compilers	3f1198f9e8fc4a0642c22f4819bf62d4	eutils	b83a2420b796f7c6eff682679d08fe25	flag-o-matic	7366202dd55cb8f018f5d450d54e7749	multilib	165fc17c38d1b11dac2008280dab6e80	toolchain-funcs	1b1da0c45c555989dc5d832b54880783	versionator	99ae9d758cbe7cfed19170e7d48f5a9c
+_md5_=87bb8bf37e7185089cd069b45a18fd10
