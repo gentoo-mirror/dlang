@@ -14,7 +14,7 @@ DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
 KEYWORDS="~x86 ~amd64"
 LICENSE="BSD"
-SLOT="$(get_version_component_range 1-2)/1"
+SLOT="$(get_version_component_range 1-2)/0"
 IUSE=""
 
 RDEPEND="dev-libs/libconfig
