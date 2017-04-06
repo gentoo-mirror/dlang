@@ -6,6 +6,7 @@ dev-lang/dmd:tools - Pulls in dev-util/dlang-tools
 dev-libs/gtkd:gstreamer - Build additional bindings to media-libs/gstreamer
 dev-libs/gtkd:libgda - Build additional bindings to gnome-extra/libgda
 dev-libs/gtkd:opengl - Build additional bindings to x11-libs/gtkglext
+dev-libs/gtkd:peas - Build additonal bindings to dev-libs/libpeas
 dev-libs/gtkd:sourceview - Build additional bindings to x11-libs/gtksourceview
 dev-libs/gtkd:vte - Build additonal bindings to x11-libs/vte
 dev-util/dlang-tools:ddemangle - An improved D symbol demangler. Replaces all occurrences of mangled D symbols in the input with their unmangled form, and writes the result to standard output.

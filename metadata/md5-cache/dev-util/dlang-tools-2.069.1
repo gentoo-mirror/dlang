@@ -1,13 +1,16 @@
 DEFINED_PHASES=compile configure install prepare test
-DEPEND==sys-devel/gcc-4.9.4*[d]
-DESCRIPTION=Wrapper script for gdc that emulates the dmd command
+DEPEND=dmd-2_069? ( dev-lang/dmd:2.069= )
+DESCRIPTION=Ancilliary tools for the D programming language compiler
 EAPI=6
-HOMEPAGE=http://www.gdcproject.org/
-KEYWORDS=amd64 arm ~arm64 ia64 ~m68k ppc ppc64 ~s390 ~sh x86 ~amd64-fbsd ~x86-fbsd
-LICENSE=GPL-3+
-RDEPEND==sys-devel/gcc-4.9.4*[d]
-SLOT=4.9.4
-SRC_URI=https://codeload.github.com/D-Programming-GDC/GDMD/tar.gz/v2.068.2 -> gdmd-2.068.2.tar.gz
+HOMEPAGE=http://dlang.org/
+IUSE=+rdmd +ddemangle detab dustmite dmd-2_069
+KEYWORDS=amd64 x86
+LICENSE=Boost-1.0
+RDEPEND=dmd-2_069? ( dev-lang/dmd:2.069= )
+REQUIRED_USE=|| ( rdmd ddemangle detab dustmite ) ^^ ( dmd-2_069 )
+RESTRICT=mirror
+SLOT=0
+SRC_URI=https://github.com/D-Programming-Language/tools/archive/v2.069.1.tar.gz -> dlang-tools-2.069.1.tar.gz
 _eclass_exported_funcs=src_prepare:dlang src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
 _eclasses_=dlang	a497958d4e290bc8bb8f18bd72576b1c	dlang-compilers	746ed2d1fd999e8d874eb3d8fe780606	epatch	8233751dc5105a6ae8fcd86ce2bb0247	epunt-cxx	f8073339d152f56626493f43d8ba4691	estack	5ac2a138d0b33354b764d84f9e835db8	eutils	e7491451996e8b54c3caeb713285b0fb	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	0236be304ee52e7f179ed2f337075515	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=8e6e7974cb3a80b8e41aa5032523ea0c
+_md5_=8bd28249f6733cc3ec74dfad9b78215b
