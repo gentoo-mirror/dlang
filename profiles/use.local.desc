@@ -30,3 +30,4 @@ sys-devel/gcc:objc-gc - Build support for the Objective C code language Garbage 
 sys-devel/gcc:regression-test - Run the testsuite and install the results (requires FEATURES=test)
 sys-devel/gcc:sanitize - Build support for various sanitizer functions (ASAN/TSAN/etc...)
 sys-devel/gcc:vtv - Build support for virtual table verification (a C++ hardening feature)
+x11-terms/tilix:linguas_ar_MA - Arabic locale for Morocco
