@@ -161,6 +161,7 @@ dlang_exec() {
 # compiler:
 # versions - a list of versions to activate during compilation
 # imports - a list of import paths
+# string_imports - a list of string import paths
 #
 # Aditionally, if the ebuild offers the "debug" use flag, we will automatically
 # raise the debug level to 1 during compilation.
@@ -426,17 +427,21 @@ __dlang_filter_versions() {
 
 	[ ${#__dlang_compiler_iuse[@]} -eq 0 ] && die "No Dlang compilers found that satisfy this package's version range: $DLANG_VERSION_RANGE"
 
-	IUSE="${__dlang_compiler_iuse[@]}"
-	if [ "${DLANG_PACKAGE_TYPE}" != "dmd" ]; then
-		if [ "${DLANG_PACKAGE_TYPE}" == "single" ]; then
-			REQUIRED_USE="^^"
-		else
-			REQUIRED_USE="||"
-		fi
-		REQUIRED_USE="${REQUIRED_USE} ( ${__dlang_compiler_iuse[@]} ) ${__dlang_compiler_iuse_mask[@]}"
+	if [ "${DLANG_PACKAGE_TYPE}" != "multi" ]; then
+		REQUIRED_USE="^^"
+	else
+		REQUIRED_USE="||"
 	fi
 	DEPEND="${__dlang_depends[@]}"
-	RDEPEND="$DEPEND"
+	# DMD, is statically linked and does not have its host compiler as a runtime dependency.
+	if [ "${DLANG_PACKAGE_TYPE}" == "dmd" ]; then
+		IUSE="${__dlang_compiler_iuse[@]} +selfhost"
+		__dlang_compiler_iuse+=( selfhost )
+	else
+		RDEPEND="$DEPEND"
+		IUSE="${__dlang_compiler_iuse[@]}"
+	fi
+	REQUIRED_USE="${REQUIRED_USE} ( ${__dlang_compiler_iuse[@]} ) ${__dlang_compiler_iuse_mask[@]}"
 
 	local -a compiler
 	for compiler in ${__dlang_compiler_iuse[@]}; do
@@ -501,14 +506,15 @@ __dlang_build_configurations() {
 					variants="default-${use_flag//_/.}"
 				fi
 				;;
+			selfhost)
+				if [ "${DLANG_PACKAGE_TYPE}" == "dmd" ]; then
+					variants="default-dmd-selfhost"
+				fi
+				;;
 		esac
 	done
 	if [ -z ${variants} ]; then
-		if [ "${DLANG_PACKAGE_TYPE}" == "dmd" ]; then
-			variants="default-dmd-selfhost"
-		else
-			die "At least one compiler USE-flag must be selected. This should be checked by REQUIRED_USE in this package."
-		fi
+		die "At least one compiler USE-flag must be selected. This should be checked by REQUIRED_USE in this package."
 	fi
 	echo ${variants}
 }
@@ -549,6 +555,7 @@ __dlang_use_build_vars() {
 		export DLANG_SO_FLAGS="-shared -defaultlib=libphobos2.so -fPIC"
 		export DLANG_OUTPUT_FLAG="-of"
 		export DLANG_VERSION_FLAG="-version"
+		export DLANG_UNITTEST_FLAG="-unittest"
 	elif [[ "${DLANG_VENDOR}" == "GNU" ]]; then
 		# Note that ldc2 expects the compiler name to be 'gdmd', not 'x86_64-pc-linux-gnu-gdmd'.
 		export DC="/usr/${CHOST_default}/gcc-bin/${DC_VERSION}/${CHOST_default}-gdc"
@@ -566,6 +573,7 @@ __dlang_use_build_vars() {
 		export DLANG_SO_FLAGS="-shared -fPIC"
 		export DLANG_OUTPUT_FLAG="-o "
 		export DLANG_VERSION_FLAG="-fversion"
+		export DLANG_UNITTEST_FLAG="-funittest"
 	elif [[ "${DLANG_VENDOR}" == "LDC" ]]; then
 		export LIBDIR_${ABI}="../opt/${DC}-${DC_VERSION}/lib${MODEL}"
 		export DMD="/opt/${DC}-${DC_VERSION}/bin/ldmd2"
@@ -577,6 +585,7 @@ __dlang_use_build_vars() {
 		export DLANG_SO_FLAGS="-shared -relocation-model=pic"
 		export DLANG_OUTPUT_FLAG="-of="
 		export DLANG_VERSION_FLAG="-d-version"
+		export DLANG_UNITTEST_FLAG="-unittest"
 	else
 		die "Could not detect D compiler vendor!"
 	fi
@@ -596,26 +605,23 @@ __dlang_additional_flags() {
 	# https://wiki.gentoo.org/wiki/Project:Quality_Assurance/Backtraces#debug_USE_flag
 	case "${DLANG_VENDOR}" in
 		"DigitalMars")
-			local version_prefix="-version="
 			local import_prefix="-I"
 			local string_import_prefix="-J"
 			local debug_flags="-debug"
 			;;
 		"GNU")
-			local version_prefix="-fversion="
 			local import_prefix="-I"
 			local string_import_prefix="-J"
 			local debug_flags="-fdebug"
 			;;
 		"LDC")
-			local version_prefix="-d-version="
 			local import_prefix="-I="
 			local string_import_prefix="-J="
 			local debug_flags="-d-debug"
 			;;
 	esac
 	echo $(has debug ${IUSE} && use debug && echo ${debug_flags})\
-		$(__dlang_prefix_words $version_prefix $versions)\
+		$(__dlang_prefix_words "${DLANG_VERSION_FLAG}=" $versions)\
 		$(__dlang_prefix_words $import_prefix $imports)\
 		$(__dlang_prefix_words $string_import_prefix $string_imports)\
 		$(__dlang_prefix_words "${DLANG_LINKER_FLAG}-l" $libs)
