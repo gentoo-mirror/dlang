@@ -1,17 +1,17 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_067? ( dev-lang/dmd:2.067= ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) ldc2-0_16? ( dev-lang/ldc2:0.16= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
+DEPEND=dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_067? ( dev-lang/dmd:2.067= ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=6
 HOMEPAGE=http://dlang.org/
-IUSE=abi_x86_32 abi_x86_64 dmd-2_071 dmd-2_070 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 ldc2-0_17 ldc2-0_16 doc examples static-libs tools
+IUSE=abi_x86_32 abi_x86_64 dmd-2_071 dmd-2_070 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 ldc2-0_17 +selfhost doc examples static-libs tools
 KEYWORDS=-* amd64 x86
 LICENSE=DMD
 PDEPEND=tools? ( >=dev-util/dlang-tools-2.069.2 )
-RDEPEND=dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_067? ( dev-lang/dmd:2.067= ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) ldc2-0_16? ( dev-lang/ldc2:0.16= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
-REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_071 dmd-2_070 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 ldc2-0_17 selfhost )
 RESTRICT=mirror
 SLOT=2.069
 SRC_URI=mirror://aws/2015/dmd.2.069.2.linux.tar.xz
 _eclass_exported_funcs=pkg_postrm:dmd pkg_postinst:dmd src_prepare:dmd src_configure:dlang src_compile:dmd src_test:dmd src_install:dmd
-_eclasses_=dlang	ae592ff5239ac2d48afd2ae46876276d	dlang-compilers	647c200a82a68c5cd4563ce1ac168819	dmd	184b61a32d2336c8e512e7011fb543a2	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	9c113d6a64826c40154cad7be15d95ea	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	72647e255187a1fadc81097b3657e5c3	multilib	0236be304ee52e7f179ed2f337075515	multilib-build	eed53a6313267c9fbcd35fc384bd0087	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=dlang	cc1961df95097ff259f79d54934c909b	dlang-compilers	39a07d81db4204794b65f610599fa71f	dmd	e68ffc8bb2c547b88fce7274ed513cad	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	9c113d6a64826c40154cad7be15d95ea	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	72647e255187a1fadc81097b3657e5c3	multilib	0236be304ee52e7f179ed2f337075515	multilib-build	eed53a6313267c9fbcd35fc384bd0087	toolchain-funcs	6eb35f81556258a4bc9182ad3dfd58ee	versionator	c80ccf29e90adea7c5cae94b42eb76d0
 _md5_=99439a82823bdea95c5d12f3d3f86c44
