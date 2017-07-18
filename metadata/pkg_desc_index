@@ -9,4 +9,4 @@ dev-util/dscanner 0.4.0: Swiss-army knife for D source code
 dev-util/dub 1.3.0: Package and build management system for the D programming language
 dev-util/gdmd 4.9.3 4.9.4: Wrapper script for gdc that emulates the dmd command
 sys-devel/gcc 4.9.3 4.9.4: The GNU Compiler Collection
-x11-terms/tilix 1.5.6 1.6.1: A tiling terminal emulator for Linux using GTK+ 3
+x11-terms/tilix 1.6.1 1.6.4: A tiling terminal emulator for Linux using GTK+ 3
