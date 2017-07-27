@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install postinst prepare test
-DEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-1_2? ( dev-lang/ldc2:1.2= ) ldc2-1_1? ( dev-lang/ldc2:1.1= ) ldc2-1_0? ( dev-lang/ldc2:1.0= ) virtual/pkgconfig
+DEPEND=dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-1_3? ( dev-lang/ldc2:1.3= ) ldc2-1_2? ( dev-lang/ldc2:1.2= ) ldc2-1_1? ( dev-lang/ldc2:1.1= ) ldc2-1_0? ( dev-lang/ldc2:1.0= ) virtual/pkgconfig
 DESCRIPTION=Auto-complete program for the D programming language
 EAPI=6
 HOMEPAGE=https://github.com/dlang-community/DCD
-IUSE=systemd dmd-2_074 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_069 ldc2-1_2 ldc2-1_1 ldc2-1_0
+IUSE=systemd dmd-2_075 dmd-2_074 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_069 ldc2-1_3 ldc2-1_2 ldc2-1_1 ldc2-1_0
 KEYWORDS=~x86 ~amd64
 LICENSE=GPL-3
-RDEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-1_2? ( dev-lang/ldc2:1.2= ) ldc2-1_1? ( dev-lang/ldc2:1.1= ) ldc2-1_0? ( dev-lang/ldc2:1.0= )
-REQUIRED_USE=^^ ( dmd-2_074 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_069 ldc2-1_2 ldc2-1_1 ldc2-1_0 )
+RDEPEND=dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_069? ( dev-lang/dmd:2.069= ) ldc2-1_3? ( dev-lang/ldc2:1.3= ) ldc2-1_2? ( dev-lang/ldc2:1.2= ) ldc2-1_1? ( dev-lang/ldc2:1.1= ) ldc2-1_0? ( dev-lang/ldc2:1.0= )
+REQUIRED_USE=^^ ( dmd-2_075 dmd-2_074 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_069 ldc2-1_3 ldc2-1_2 ldc2-1_1 ldc2-1_0 )
 SLOT=0
 SRC_URI=https://github.com/dlang-community/DCD/archive/v0.9.0.tar.gz -> DCD-0.9.0.tar.gz https://github.com/economicmodeling/containers/archive/2892cfc1e7a205d4f81af3970cbb53e4f365a765.tar.gz -> containers-2892cfc1e7a205d4f81af3970cbb53e4f365a765.tar.gz https://github.com/dlang-community/dsymbol/archive/e9aae0594739d002009cd34dd3edeb38f1f0893b.tar.gz -> dsymbol-e9aae0594739d002009cd34dd3edeb38f1f0893b.tar.gz https://github.com/dlang-community/libdparse/archive/5e81535d0aff4ceec2cbf03f5b02a31ae6d3fec2.tar.gz -> libdparse-5e81535d0aff4ceec2cbf03f5b02a31ae6d3fec2.tar.gz https://github.com/msgpack/msgpack-d/archive/e6a5a69d2f86f2a0f7f7dad9de7080a55a929e46.tar.gz -> msgpack-d-e6a5a69d2f86f2a0f7f7dad9de7080a55a929e46.tar.gz
 _eclass_exported_funcs=pkg_postinst:- src_prepare:- src_configure:dlang src_compile:dlang src_test:dlang src_install:dlang
-_eclasses_=dlang	e068a399ed6b60d5ef663c8d28c0f67b	dlang-compilers	0db7c776eac03146e2d7479bf2da14e5	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	9c113d6a64826c40154cad7be15d95ea	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	e12dd5e3cf1f359292cea2a70abeba5f	toolchain-funcs	8fec6b1eb195836560e70b66d98fb163	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_eclasses_=dlang	d7868093e14351bb4d59b3ab83813d56	dlang-compilers	e683a56a7b4fcb4cb7002cf8e7621097	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	9c113d6a64826c40154cad7be15d95ea	flag-o-matic	61cad4fb5d800b29d484b27cb033f59b	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	systemd	e12dd5e3cf1f359292cea2a70abeba5f	toolchain-funcs	8fec6b1eb195836560e70b66d98fb163	versionator	c80ccf29e90adea7c5cae94b42eb76d0
 _md5_=52343325bbf63b84372af69ab6efd1e9
