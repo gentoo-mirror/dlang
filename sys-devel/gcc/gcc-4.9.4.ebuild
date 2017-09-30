@@ -39,8 +39,6 @@ DEPEND="${RDEPEND}
 	>=${CATEGORY}/binutils-2.20"
 PDEPEND="d? ( ~dev-util/gdmd-${PV} )"
 
-GCC_FILESDIR=${PORTDIR}/sys-devel/gcc/files
-
 if [[ ${CATEGORY} != cross-* ]] ; then
 	PDEPEND="${PDEPEND} elibc_glibc? ( >=sys-libs/glibc-2.8 )"
 fi
@@ -56,12 +54,13 @@ src_prepare() {
 
 	use vanilla && return 0
 	#Use -r1 for newer piepatchet that use DRIVER_SELF_SPECS for the hardened specs.
-	[[ ${CHOST} == ${CTARGET} ]] && epatch "${GCC_FILESDIR}"/gcc-spec-env-r1.patch
+	[[ ${CHOST} == ${CTARGET} ]] && epatch "${FILESDIR}"/gcc-spec-env-r1.patch
 
 	if use d ; then
 		# Get GDC sources into the tree.
 		git-2_src_unpack
 		cd ../dev || die "Changing into Git checkout directory failed."
+		use pgo && epatch "${FILESDIR}"/gdc-pgo.patch
 		./setup-gcc.sh ../gcc-${GCC_PV} || die "Could not setup GDC."
 	fi
 }
