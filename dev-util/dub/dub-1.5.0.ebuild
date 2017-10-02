@@ -3,7 +3,7 @@
 
 EAPI=6
 
-DESCRIPTION="Package and build management system for the D programming language"
+DESCRIPTION="Package and build management system for D"
 HOMEPAGE="http://code.dlang.org/"
 LICENSE="MIT"
 
@@ -26,6 +26,11 @@ RDEPEND="${DEPEND}"
 d_src_compile() {
 	local imports=source versions=DubUseCurl libs="curl z"
 	dlang_compile_bin bin/dub $(<build-files.txt)
+}
+
+d_src_test() {
+	echo "Test phase disabled due to multiple problems."
+	#DUB="${S}/bin/dub" test/run-unittest.sh || die "Test phase failed"
 }
 
 d_src_install() {

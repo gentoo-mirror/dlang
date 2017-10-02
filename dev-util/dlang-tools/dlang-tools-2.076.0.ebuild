@@ -18,11 +18,11 @@ inherit versionator
 DLANG_SLOT="$(get_version_component_range 1-2)"
 RESTRICT="mirror"
 
-BETA="$(echo $(get_version_component_range 4) | cut -c 5-)"
+BETA="$(get_version_component_range 4)"
 VERSION="$(get_version_component_range 1-3)"
 
 if [[ -n "${BETA}" ]]; then
-	VERSION="${VERSION}-b${BETA}"
+	VERSION="${VERSION}-b${BETA:4}"
 fi
 SRC_URI="https://codeload.github.com/D-Programming-Language/tools/tar.gz/v${VERSION} -> dlang-tools-${VERSION}.tar.gz"
 
@@ -34,17 +34,16 @@ inherit eutils dlang
 S="${WORKDIR}/tools-${VERSION}"
 
 d_src_compile() {
-	for tool in ${TOOLS}; do
-		if use "${tool}"; then
-			emake -f posix.mak DMD="${DMD}" DFLAGS="${DMDFLAGS}" "${tool}"
-		fi
-	done
+	use ddemangle && dlang_compile_bin ddemangle ddemangle.d
+	use detab     && dlang_compile_bin detab     detab.d
+	use dustmite  && dlang_compile_bin dustmite  DustMite/dustmite.d DustMite/splitter.d
+	use rdmd      && dlang_compile_bin rdmd      rdmd.d
 }
 
 d_src_install() {
 	for tool in ${TOOLS}; do
 		if use "${tool}"; then
-			dobin generated/linux/*/"${tool}"
+			dobin "${tool}"
 		fi
 	done
 

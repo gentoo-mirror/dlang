@@ -205,6 +205,8 @@ dlang_convert_ldflags() {
 				filter-ldflags {-L,-Xlinker,-Wl,}--gc-sections
 			fi
 		fi
+		# Filter ld.gold ICF flag. (https://issues.dlang.org/show_bug.cgi?id=17515)
+		filter-ldflags {-L,-Xlinker,-Wl,}--icf={none,all,safe}
 	fi
 
 	if [[ "${DLANG_VENDOR}" == "DigitalMars" ]] || [[ "${DLANG_VENDOR}" == "GNU" ]]; then
@@ -414,8 +416,8 @@ __dlang_filter_versions() {
 				start=
 				stop="${range#-}"
 			elif [[ "${range}" == *?-?* ]]; then
-				start="$(echo "${range}" | cut -d- -f1)"
-				stop="$(echo "${range}" | cut -d- -f2)"
+				start="${range%-*}"
+				stop="${range#*-}"
 			else
 				start="${range}"
 				stop="${range}"
@@ -514,7 +516,7 @@ __dlang_build_configurations() {
 				;;
 		esac
 	done
-	if [ -z ${variants} ]; then
+	if [ -z "${variants}" ]; then
 		die "At least one compiler USE-flag must be selected. This should be checked by REQUIRED_USE in this package."
 	fi
 	echo ${variants}
