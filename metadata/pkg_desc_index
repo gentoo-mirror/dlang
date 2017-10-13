@@ -1,10 +1,10 @@
 app-eselect/eselect-dlang 20160606-r1: Eselect module for management of multiple D versions
-dev-lang/dmd 2.063.2-r2 2.064.2-r2 2.065.0-r2 2.066.1-r2 2.067.1-r3 2.068.2-r4 2.069.2-r1 2.070.2-r1 2.071.2-r1 2.072.2-r1 2.073.2-r1 2.074.1-r1 2.075.1 2.076.0: Reference compiler for the D programming language
+dev-lang/dmd 2.063.2-r2 2.064.2-r2 2.065.0-r2 2.066.1-r2 2.067.1-r3 2.068.2-r4 2.069.2-r1 2.070.2-r1 2.071.2-r1 2.072.2-r1 2.073.2-r1 2.074.1-r1 2.075.1 2.076.0 2.076.1: Reference compiler for the D programming language
 dev-lang/ldc2 0.14.0-r4 0.15.1-r3 0.16.0-r3 0.16.1-r2 0.17.0-r4 0.17.1-r3 0.17.4-r2 0.17.5 1.0.0-r5 1.1.0-r4 1.1.1-r3 1.2.0-r2 1.3.0-r2 1.4.0: LLVM D Compiler
 dev-libs/gtkd 2.4.2 3.5.1-r2 3.6.6: GtkD is a D binding and OO wrapper of GTK+
 dev-util/dcd 0.9.0 0.9.1: Auto-complete program for the D programming language
 dev-util/dfmt 0.4.5: Dfmt is a formatter for D source code
-dev-util/dlang-tools 2.064.2 2.065.0 2.066.1 2.067.1 2.068.2 2.069.1 2.070.2 2.071.2 2.072.2 2.073.2 2.074.0 2.074.1 2.075.1 2.076.0: Ancilliary tools for the D programming language compiler
+dev-util/dlang-tools 2.064.2 2.065.0 2.066.1 2.067.1 2.068.2 2.069.1 2.070.2 2.071.2 2.072.2 2.073.2 2.074.0 2.074.1 2.075.1 2.076.0 2.076.1: Ancilliary tools for the D programming language compiler
 dev-util/dscanner 0.4.0: Swiss-army knife for D source code
 dev-util/dub 1.4.1 1.5.0: Package and build management system for D
 dev-util/gdmd 4.9.4: Wrapper script for gdc that emulates the dmd command
