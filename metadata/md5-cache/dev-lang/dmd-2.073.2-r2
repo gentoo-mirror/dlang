@@ -5,12 +5,12 @@ EAPI=6
 HOMEPAGE=http://dlang.org/
 IUSE=abi_x86_32 abi_x86_64 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 gdc-4_9_4 ldc2-0_17 ldc2-0_16 ldc2-1_3 ldc2-1_2 ldc2-1_1 ldc2-1_0 +selfhost doc examples static-libs tools
 KEYWORDS=-* amd64 x86
-LICENSE=DMD
-PDEPEND=tools? ( >=dev-util/dlang-tools-2.072.2 )
+LICENSE=Boost-1.0
+PDEPEND=tools? ( >=dev-util/dlang-tools-2.073.2 )
 RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
 REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 gdc-4_9_4 ldc2-0_17 ldc2-0_16 ldc2-1_3 ldc2-1_2 ldc2-1_1 ldc2-1_0 selfhost )
 RESTRICT=mirror
-SLOT=2.072
-SRC_URI=mirror://aws/2016/dmd.2.072.2.linux.tar.xz
-_eclasses_=dlang	2fca50d7c98046a2d1377cfd30b433e7	dlang-compilers	4177dc12fb1f32c6a16f3d90756f044b	dmd	46b76768ebd3255f6d32aebdaf88cf8a	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	227b041a120d309fdefbebb3b8c1dfa9	flag-o-matic	2274fcc1e7ef6affaff5bcd636275417	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	72647e255187a1fadc81097b3657e5c3	multilib	97f470f374f2e94ccab04a2fb21d811e	multilib-build	eed53a6313267c9fbcd35fc384bd0087	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=ba0a22b5d69aa6ab46e9ae636db34a46
+SLOT=2.073
+SRC_URI=mirror://aws/2017/dmd.2.073.2.linux.tar.xz
+_eclasses_=dlang	2fca50d7c98046a2d1377cfd30b433e7	dlang-compilers	4177dc12fb1f32c6a16f3d90756f044b	dmd	dfeef426fdd51a5d5a89e307f6eec3ec	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	227b041a120d309fdefbebb3b8c1dfa9	flag-o-matic	2274fcc1e7ef6affaff5bcd636275417	ltprune	2770eed66a9b8ef944714cd0e968182e	multibuild	72647e255187a1fadc81097b3657e5c3	multilib	97f470f374f2e94ccab04a2fb21d811e	multilib-build	eed53a6313267c9fbcd35fc384bd0087	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_md5_=4a01ca956967e6bd7a25b66522a76d16
