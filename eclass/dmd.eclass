@@ -19,12 +19,11 @@ HTML_DOCS="html/*"
 # DMD supports amd64/x86 exclusively
 MULTILIB_COMPAT=( abi_x86_{32,64} )
 
-inherit multilib-build versionator
+inherit multilib-build versionator toolchain-funcs
 
-# License doesn't allow redistribution
-LICENSE="DMD"
+# For reliable download statistics, we don't mirror.
 RESTRICT="mirror"
-
+LICENSE="Boost-1.0"
 SLOT="$(get_version_component_range 1-2)"
 MAJOR="$(get_major_version)"
 MINOR="$((10#$(get_version_component_range 2)))"
@@ -40,13 +39,6 @@ else
 fi
 SONAME="${SONAME-libphobos2.so.0.${MINOR}.${PATCH}}"
 SONAME_SYM="${SONAME%.*}"
-declare -ga FILES=(
-	[1]="license.txt                     license.txt"
-	[2]="druntime/LICENSE                druntime-LICENSE.txt"
-	[3]="druntime/README.md              druntime-README.md"
-	[4]="phobos/LICENSE_1_0.txt          phobos-LICENSE_1_0.txt"
-	[5]="dmd/src/ddmd/boostlicense.txt   dmd-boostlicense.txt"
-)
 
 dmd_symlinkable() {
 	# Return whether dmd will find dmd.conf in the executable directory, if we
@@ -122,11 +114,7 @@ dmd_src_prepare() {
 	done
 
 	# Ebuild patches
-	if [ -n "${PATCHES}" ]; then
-		for p in "${PATCHES}"; do
-			eapply "${FILESDIR}/${p}"
-		done
-	fi
+	default
 
 	# Run other preparations
 	declare -f dmd_src_prepare_extra > /dev/null && dmd_src_prepare_extra
@@ -143,6 +131,8 @@ dmd_src_compile() {
 
 	# 2.068 used HOST_DC instead of HOST_DMD
 	[[ "${SLOT}" == "2.068" ]] && HOST_DMD="HOST_DC" || HOST_DMD="HOST_DMD"
+	# 2.070 and below used HOST_CC instead of HOST_CXX
+	[[ "${MAJOR}" -ge 2 ]] && [[ "${MINOR}" -ge 71 ]] && HOST_CXX="HOST_CXX" || HOST_CXX="HOST_CC"
 	# 2.072 and 2.073 have support for LTO, but would need a Makefile patch
 	[[ "${SLOT}" != "2.072" && "${SLOT}" != "2.073" ]] && LTO="ENABLE_LTO=1"
 
@@ -161,7 +151,7 @@ dmd_src_compile() {
 		esac
 		export DMD="../../${kernel}/bin${model}/dmd"
 	fi
-	emake -C dmd/src -f posix.mak TARGET_CPU=X86 ${HOST_DMD}="${DMD}" RELEASE=1 ${LTO}
+	emake -C dmd/src -f posix.mak TARGET_CPU=X86 ${HOST_DMD}="${DMD}" ${HOST_CXX}="$(tc-getCXX)" RELEASE=1 ${LTO}
 
 	# Don't pick up /etc/dmd.conf when calling dmd/src/dmd !
 	if [ ! -f dmd/src/dmd.conf ]; then
@@ -195,12 +185,6 @@ dmd_src_test() {
 
 dmd_src_install() {
 	local MODEL=$(dmd_abi_to_model)
-
-	# Licenses
-	insinto ${PREFIX}
-	for file in "${FILES[@]}"; do
-		newins $file
-	done
 
 	# dmd.conf
 	if has_multilib_profile; then
@@ -290,7 +274,6 @@ dmd_pkg_postinst() {
 	# Update active dmd
 	"${ROOT}"/usr/bin/eselect dlang update dmd
 
-	elog "License files are in: /${PREFIX}"
 	use examples && elog "Examples can be found in: /${PREFIX}/samples"
 	use doc && elog "HTML documentation is in: /usr/share/doc/${PF}/html"
 }
