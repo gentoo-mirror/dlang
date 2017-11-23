@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install prepare test
-DEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) !x86? ( !amd64? ( ldc2-1_4? ( dev-lang/ldc2:1.4= ) ) )
+DEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) ldc2-1_4? ( dev-lang/ldc2:1.4= )
 DESCRIPTION=Ancilliary tools for the D programming language compiler
 EAPI=6
 HOMEPAGE=http://dlang.org/
 IUSE=+ddemangle detab dustmite +rdmd dmd-2_074 ldc2-1_4
 KEYWORDS=amd64 x86
 LICENSE=Boost-1.0
-RDEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) !x86? ( !amd64? ( ldc2-1_4? ( dev-lang/ldc2:1.4= ) ) )
-REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_074 ldc2-1_4 ) amd64? ( !ldc2-1_4 ) x86? ( !ldc2-1_4 )
+RDEPEND=dmd-2_074? ( dev-lang/dmd:2.074= ) ldc2-1_4? ( dev-lang/ldc2:1.4= )
+REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_074 ldc2-1_4 )
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://codeload.github.com/D-Programming-Language/tools/tar.gz/v2.074.0 -> dlang-tools-2.074.0.tar.gz
-_eclasses_=dlang	2fca50d7c98046a2d1377cfd30b433e7	dlang-compilers	4177dc12fb1f32c6a16f3d90756f044b	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	227b041a120d309fdefbebb3b8c1dfa9	flag-o-matic	a6089a2a4027ae3da4a460dc87b21050	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
-_md5_=6142fb0cc2d5014de87d5aa44b26bb8d
+SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.074.0 -> dlang-tools-2.074.0.tar.gz
+_eclasses_=dlang	2fca50d7c98046a2d1377cfd30b433e7	dlang-compilers	d80fb1b60455b47f6a87eb73179d91a8	epatch	8233751dc5105a6ae8fcd86ce2bb0247	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	227b041a120d309fdefbebb3b8c1dfa9	flag-o-matic	a6089a2a4027ae3da4a460dc87b21050	ltprune	2770eed66a9b8ef944714cd0e968182e	multilib	97f470f374f2e94ccab04a2fb21d811e	toolchain-funcs	185a06792159ca143528e7010368e8af	versionator	c80ccf29e90adea7c5cae94b42eb76d0
+_md5_=2468b2598cb90aa5f18bf90dfaea965f
