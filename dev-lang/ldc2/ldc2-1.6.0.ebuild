@@ -12,14 +12,14 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="x86 amd64 ~arm"
+KEYWORDS="~x86 ~amd64 ~arm"
 LICENSE="BSD"
 SLOT="$(get_version_component_range 1-2)/$(get_version_component_range 3)"
 
 IUSE="static-libs"
 
-RDEPEND=">=sys-devel/llvm-3.5:=
-	<sys-devel/llvm-4.1:=
+RDEPEND=">=sys-devel/llvm-3.7:=
+	<sys-devel/llvm-5.1:=
 	>=app-eselect/eselect-dlang-20140709"
 DEPEND=">=dev-util/cmake-2.8
 	${RDEPEND}"
