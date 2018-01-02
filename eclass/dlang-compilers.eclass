@@ -28,12 +28,12 @@ dlang-compilers_declare_versions() {
 		["2.074"]="2.074 x86 amd64"
 		["2.075"]="2.075 x86 amd64"
 		["2.076"]="2.076 x86 amd64"
-		["2.077"]="2.077 ~x86 ~amd64"
+		["2.077"]="2.077 x86 amd64"
 	)
 
 	# GDC (alpha, hppa, sparc: masked "d" USE-flag)
 	__dlang_gdc_frontend=(
-		["4.9.4"]="2.068 amd64 arm hppa ia64 m68k ppc ppc64 s390 sh x86 ~amd64-fbsd ~x86-fbsd"
+		["6.4.0"]="2.068 amd64 arm hppa ia64 m68k ppc ppc64 s390 sh x86 ~amd64-fbsd ~x86-fbsd"
 	)
 
 	# LDC
