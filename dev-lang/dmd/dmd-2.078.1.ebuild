@@ -3,8 +3,8 @@
 
 EAPI=6
 
-KEYWORDS="-* amd64 x86"
-YEAR=2017
+KEYWORDS="-* ~amd64 ~x86"
+YEAR=2018
 DLANG_VERSION_RANGE="2.067-"
 
 inherit dmd
