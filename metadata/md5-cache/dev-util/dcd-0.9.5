@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile configure install postinst prepare test
+DEPEND=dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_076? ( dev-lang/dmd:2.076= ) ldc2-1_7? ( dev-lang/ldc2:1.7= ) ldc2-1_6? ( dev-lang/ldc2:1.6= ) ldc2-1_5? ( dev-lang/ldc2:1.5= ) ldc2-1_8? ( dev-lang/ldc2:1.8= ) virtual/pkgconfig
+DESCRIPTION=Auto-complete program for the D programming language
+EAPI=6
+HOMEPAGE=https://github.com/dlang-community/DCD
+IUSE=systemd dmd-2_079 dmd-2_078 dmd-2_075 dmd-2_077 dmd-2_076 ldc2-1_7 ldc2-1_6 ldc2-1_5 ldc2-1_8
+KEYWORDS=~x86 ~amd64
+LICENSE=GPL-3
+RDEPEND=dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_076? ( dev-lang/dmd:2.076= ) ldc2-1_7? ( dev-lang/ldc2:1.7= ) ldc2-1_6? ( dev-lang/ldc2:1.6= ) ldc2-1_5? ( dev-lang/ldc2:1.5= ) ldc2-1_8? ( dev-lang/ldc2:1.8= )
+REQUIRED_USE=^^ ( dmd-2_079 dmd-2_078 dmd-2_075 dmd-2_077 dmd-2_076 ldc2-1_7 ldc2-1_6 ldc2-1_5 ldc2-1_8 )
+SLOT=0
+SRC_URI=https://github.com/dlang-community/DCD/archive/v0.9.5.tar.gz -> DCD-0.9.5.tar.gz https://github.com/economicmodeling/containers/archive/d0458897a60137a84f88eefcdd5a0b12ac07cbe7.tar.gz -> containers-d0458897a60137a84f88eefcdd5a0b12ac07cbe7.tar.gz https://github.com/dlang-community/dsymbol/archive/52625b8612e503f8ae1d481a1cd3d52982e73fb9.tar.gz -> dsymbol-52625b8612e503f8ae1d481a1cd3d52982e73fb9.tar.gz https://github.com/dlang-community/libdparse/archive/0e18b62cb2fd86ee09ec8457c394bdef409ca542.tar.gz -> libdparse-0e18b62cb2fd86ee09ec8457c394bdef409ca542.tar.gz https://github.com/dlang-community/stdx-allocator/archive/7487970b58f4a2c0d495679329a8a2857111f3fd.tar.gz -> stdx-allocator-7487970b58f4a2c0d495679329a8a2857111f3fd.tar.gz https://github.com/msgpack/msgpack-d/archive/500940918243cf0468028e552605204c6aa46807.tar.gz -> msgpack-d-500940918243cf0468028e552605204c6aa46807.tar.gz
+_eclasses_=desktop	2ccd1dd1dd7bfb8795eea024a4f91bb6	dlang	258d49a28070e37d2746ddb2880f6ddf	dlang-compilers	9d5664303859e66f80710bba223d8e64	epatch	9a5f039771f143195164a15a4faa41a1	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	63392afb034aad67f17fa129019eb4d9	flag-o-matic	5128c4729303400bd8d4b0b966530955	ltprune	607e058da37aa6dabfa408b7d61da72e	multilib	97f470f374f2e94ccab04a2fb21d811e	preserve-libs	ef207dc62baddfddfd39a164d9797648	systemd	a31844b675f1a1fea87fbe1144aee5f5	toolchain-funcs	885c7d8dd70a58825f3d17e35a3cd1e9	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf	versionator	26ca8a8bd95d6a74122c08ba98a4ee72
+_md5_=9cefcb7f2437783e4083cf0a59ffa2e8
