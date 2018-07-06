@@ -8,14 +8,16 @@ HOMEPAGE="https://github.com/dlang-community/dfmt"
 LICENSE="Boost-1.0"
 
 SLOT="0"
-KEYWORDS="x86 amd64"
-LIBDPARSE="687c0ca751747ebe498c183da1a3ee3119d57932"
+KEYWORDS="~x86 ~amd64"
+LIBDPARSE="086cf06051bb1f33c94891ba6c39a57f164ee296"
+ALLOCATOR="b7778fd6bf5f9aaaa87dd27f989cefbf9b3b365f"
 SRC_URI="
 	https://github.com/dlang-community/dfmt/archive/v${PV}.tar.gz -> ${PN}-${PV}.tar.gz
 	https://github.com/dlang-community/libdparse/archive/${LIBDPARSE}.tar.gz -> libdparse-${LIBDPARSE}.tar.gz
+	https://github.com/dlang-community/stdx-allocator/archive/${ALLOCATOR}.tar.gz -> stdx-allocator-${ALLOCATOR}.tar.gz
 	"
 
-DLANG_VERSION_RANGE="2.069-"
+DLANG_VERSION_RANGE="2.072-"
 DLANG_PACKAGE_TYPE="single"
 
 inherit dlang bash-completion-r1
@@ -31,7 +33,8 @@ EOF
 
 d_src_compile() {
 	local libdparse_src="../libdparse-${LIBDPARSE}/src"
-	local imports="src ${libdparse_src}"
+	local allocator_src="../stdx-allocator-${ALLOCATOR}/source"
+	local imports="src ${libdparse_src} ${allocator_src}"
 	local string_imports="views"
 
 	dlang_compile_bin "bin/dfmt" "src/dfmt/main.d" "src/dfmt/config.d" "src/dfmt/editorconfig.d" \
@@ -39,7 +42,9 @@ d_src_compile() {
 		"src/dfmt/formatter.d" "src/dfmt/globmatch_editorconfig.d" \
 		${libdparse_src}/dparse/lexer.d ${libdparse_src}/dparse/parser.d ${libdparse_src}/dparse/ast.d \
 		${libdparse_src}/dparse/rollback_allocator.d ${libdparse_src}/dparse/stack_buffer.d \
-		${libdparse_src}/std/experimental/lexer.d
+		${libdparse_src}/std/experimental/lexer.d \
+		${allocator_src}/stdx/allocator/common.d ${allocator_src}/stdx/allocator/mallocator.d \
+		${allocator_src}/stdx/allocator/package.d ${allocator_src}/stdx/allocator/gc_allocator.d
 }
 
 d_src_test() {
