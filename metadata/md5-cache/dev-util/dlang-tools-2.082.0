@@ -10,6 +10,6 @@ RDEPEND=dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dm
 REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_079 dmd-2_078 dmd-2_075 dmd-2_077 dmd-2_076 dmd-2_080 gdc-7_3_0 ldc2-1_7 ldc2-1_6 ldc2-1_5 ldc2-1_9 ldc2-1_8 )
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.081.1 -> dlang-tools-2.081.1.tar.gz
+SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.082.0 -> dlang-tools-2.082.0.tar.gz
 _eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	dlang	311c546ee702d77b58fd19df6689fb86	dlang-compilers	c138b3b8883b9d579ab5b6f53bef6f5f	eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	55aaa148741116aa54ad0d80e361818e	ltprune	08f9e1d9ee0af8f5d9a7854efbcd8c0e	multilib	b2f01ad412baf81650c23fcf0975fa33	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	f164325a2cdb5b3ea39311d483988861	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
 _md5_=38dcb9fd54ec38c857fc82d9d65a6ef6
