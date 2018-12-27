@@ -12,11 +12,13 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	>=dev-db/sqlite-3.7.15:3
 	net-misc/curl
+	x11-libs/libnotify
 "
 DEPEND="${RDEPEND}"
 SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz"
 DLANG_VERSION_RANGE="2.072-"
 DLANG_PACKAGE_TYPE="single"
+IUSE="libnotify"
 
 inherit dlang systemd
 
@@ -28,7 +30,9 @@ src_prepare() {
 }
 
 d_src_compile() {
-	emake PREFIX="${ESYSROOT}/usr" DC="${DMD}" DFLAGS="${DCFLAGS} -J. -L-lcurl -L-lsqlite3 -ofonedrive"
+	export DFLAGSNOTIFICATIONS="-version=NoPragma -version=NoGdk -version=Notifications -L-lgmodule-2.0 -L-lglib-2.0 -L-lnotify"
+	use libnotify
+	emake NOTIFICATIONS=$? PREFIX="${ESYSROOT}/usr" DC="${DMD}" DFLAGS="${DCFLAGS} -J. -L-lcurl -L-lsqlite3 ${DFLAGSNOTIFICATIONS} -ofonedrive"
 }
 
 src_test() {
@@ -51,6 +55,8 @@ src_install() {
 	# systemd units
 	systemd_douserunit onedrive.service
 	systemd_dounit onedrive@.service
+	# man page
+	doman onedrive.1
 }
 
 pkg_postinst() {
