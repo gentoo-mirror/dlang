@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,14 +8,14 @@ HOMEPAGE="https://github.com/dlang-community/DCD"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="systemd"
 
-CONTAINERS="c261fa119072ce788ef81b8d8fee9a2adddca5d1"
-DSYMBOL="47f471114ad272dc0cd41996c7977413d7a68d63"
-LIBDPARSE="1556a80bccbe4bf40ed78ec7144011d3496ee334"
-MSGPACK="500940918243cf0468028e552605204c6aa46807"
-ALLOCATOR="b7778fd6bf5f9aaaa87dd27f989cefbf9b3b365f"
+CONTAINERS="836a0cc93a98815ac309294c45aab0ba98018073"
+DSYMBOL="de7389be5dda532ef7cd431d03efbfe6b9522687"
+LIBDPARSE="23b20de4ee48ed3f0e8729f6318405543cb3a611"
+MSGPACK="19d9245e315a85763754ded6912c2375c9226e04"
+ALLOCATOR="d6e6ce4a838e0dad43ef13f050f96627339cdccd"
 SRC_URI="
 	https://github.com/dlang-community/DCD/archive/v${PV}.tar.gz -> DCD-${PV}.tar.gz
 	https://github.com/economicmodeling/containers/archive/${CONTAINERS}.tar.gz -> containers-${CONTAINERS}.tar.gz
@@ -29,7 +29,7 @@ S="${WORKDIR}/DCD-${PV}"
 DLANG_VERSION_RANGE="2.075-"
 DLANG_PACKAGE_TYPE="single"
 
-inherit dlang systemd
+inherit dlang systemd bash-completion-r1
 
 src_prepare() {
 	# Default ebuild unpack function places archives side-by-side ...
@@ -89,6 +89,8 @@ d_src_install() {
 	dobin bin/dcd-server
 	dobin bin/dcd-client
 	use systemd && systemd_douserunit "${FILESDIR}"/dcd-server.service
+	dobashcomp bash-completion/completions/dcd-server
+	dobashcomp bash-completion/completions/dcd-client
 	insinto /etc
 	doins dcd.conf
 	dodoc README.md

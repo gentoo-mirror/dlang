@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,15 +8,15 @@ HOMEPAGE="https://github.com/dlang-community/D-Scanner"
 LICENSE="Boost-1.0"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 IUSE="debug"
 
-CONTAINERS="5d85484707d9bb6bae374f352231e633518efe5a"
-DSYMBOL="47f471114ad272dc0cd41996c7977413d7a68d63"
+CONTAINERS="22fe1e5b385fbf64fb9647731291f377bdb117d3"
+DSYMBOL="7eb7a3b5c57593b51d002ae4369501a1a395f31a"
 INIFILED="cecaff8037a60db2a51c9bded4802c87d938a44e"
-LIBDDOC="e1dae8ec11e03904ece4c36ae4fd497ebbbeb820"
-LIBDPARSE="1556a80bccbe4bf40ed78ec7144011d3496ee334"
-ALLOCATOR="b7778fd6bf5f9aaaa87dd27f989cefbf9b3b365f"
+LIBDDOC="beff9b8f11ddc71ffcdfa7108a3c12e5aa8e2825"
+LIBDPARSE="23b20de4ee48ed3f0e8729f6318405543cb3a611"
+ALLOCATOR="d6e6ce4a838e0dad43ef13f050f96627339cdccd"
 GITHUB_URI="https://codeload.github.com"
 SRC_URI="
 	${GITHUB_URI}/dlang-community/${PN}/tar.gz/v${PV} -> ${P}.tar.gz
