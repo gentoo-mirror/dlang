@@ -3,7 +3,7 @@
 
 EAPI=6
 
-KEYWORDS="-* amd64 x86"
+KEYWORDS="-* ~amd64 ~x86"
 YEAR=2019
 DLANG_VERSION_RANGE="2.073-"
 
@@ -17,8 +17,8 @@ PATCHES=(
 dmd_src_prepare_extra() {
 	# Copy default DDOC theme file into resource directory
 	mkdir "dmd/res" || die "Failed to create 'dmd/res' directory"
-	cp "${FILESDIR}/2.084-default_ddoc_theme.ddoc" "dmd/res/default_ddoc_theme.ddoc" || die "Failed to copy 'default_ddoc_theme.ddoc' file into 'src/res' directory."
+	cp "${FILESDIR}/2.086-default_ddoc_theme.ddoc" "dmd/res/default_ddoc_theme.ddoc" || die "Failed to copy 'default_ddoc_theme.ddoc' file into 'src/res' directory."
 
 	# Copy missing config.d
-	cp "${FILESDIR}/2.084-config.d" "dmd/config.d" || die "Failed to copy 'config.sh' file into 'dmd' directory."
+	cp "${FILESDIR}/2.086-config.d" "dmd/config.d" || die "Failed to copy 'config.sh' file into 'dmd' directory."
 }
