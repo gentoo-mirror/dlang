@@ -1,0 +1,16 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare test
+DEPEND=dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_068? ( dev-lang/dmd:2.068= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_067? ( dev-lang/dmd:2.067= ) gdc-6_4_0? ( =sys-devel/gcc-6.4.0*[d,-d-bootstrap(-)] =dev-util/gdmd-6.4.0* ) ldc2-0_17? ( dev-lang/ldc2:0.17= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
+DESCRIPTION=Reference compiler for the D programming language
+EAPI=6
+HOMEPAGE=http://dlang.org/
+IUSE=abi_x86_32 abi_x86_64 dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 gdc-6_4_0 ldc2-0_17 +selfhost doc examples static-libs tools
+KEYWORDS=-* amd64 x86
+LICENSE=Boost-1.0
+PDEPEND=tools? ( >=dev-util/dlang-tools-2.070.2 )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_071 dmd-2_070 dmd-2_073 dmd-2_072 dmd-2_068 dmd-2_069 dmd-2_067 gdc-6_4_0 ldc2-0_17 selfhost )
+RESTRICT=mirror
+SLOT=2.070
+SRC_URI=mirror://aws/2016/dmd.2.070.2.linux.tar.xz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	dlang	96af4dd79fcb6cda297a467ba03cc547	dlang-compilers	dd0a2b4f622f594d000a1426f8a279f1	dmd	280516cd0e576eaacb55358f4e04a84d	eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	43ddf5aaffa7a8d0482df54d25a66a1f	eutils	6e6c2737b59a4b982de6fb3ecefd87f8	flag-o-matic	7ba73aee7fe4462b3a745e3645ab92ca	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multilib-build	0d0c25170069d06d0eb233154229af97	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	8c7f9d80beedd16f2e5a7f612c609529	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+_md5_=dcaea00634f5f74e35534c2f6f0712c0
