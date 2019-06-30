@@ -18,13 +18,13 @@ SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
 IUSE="static-libs"
 
-# We support LLVM 3.9 through 7.
+# We support LLVM 3.7 through 7.
 RDEPEND="|| (
 		sys-devel/llvm:7
 		sys-devel/llvm:6
 		sys-devel/llvm:5
 		sys-devel/llvm:4
-		>=sys-devel/llvm-3.9:0
+		>=sys-devel/llvm-3.7:0
 	)
 	<sys-devel/llvm-8:=
 	>=app-eselect/eselect-dlang-20140709"
@@ -32,7 +32,7 @@ DEPEND=">=dev-util/cmake-2.8
 	${RDEPEND}"
 LLVM_MAX_SLOT=7
 PATCHES="${FILESDIR}/ldc2-1.12.0-link-defaultlib-shared.patch
-	${FILESDIR}/ldc2-1.13.0-llvm-7.1.0-compatibility.patch"
+	${FILESDIR}/ldc2-1.12.0-llvm-7.1.0-compatibility.patch"
 
 # For now, we support amd64 multilib. Anyone is free to add more support here.
 MULTILIB_COMPAT=( abi_x86_{32,64} )
@@ -55,7 +55,7 @@ d_src_configure() {
 	export LIBDIR_${ABI}="${LIBDIR_HOST}"
 	local mycmakeargs=(
 		-DD_VERSION=2
-		-DCMAKE_INSTALL_PREFIX=/opt/ldc2-$(ver_cut 1-2)
+		-DCMAKE_INSTALL_PREFIX=/usr/lib/ldc2/$(ver_cut 1-2)
 		-DD_COMPILER="${DMD}"
 		-DD_COMPILER_DMD_COMPAT=1
 		-DLDC_WITH_LLD=OFF

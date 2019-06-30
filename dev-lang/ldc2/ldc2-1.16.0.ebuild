@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -12,52 +12,66 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="amd64 ~arm x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 LICENSE="BSD"
 SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
-IUSE=""
+IUSE="static-libs"
 
-# We support LLVM 3.7 through 5.
+# We support LLVM 3.9 through 8.
 RDEPEND="|| (
+		sys-devel/llvm:8
+		sys-devel/llvm:7
+		sys-devel/llvm:6
 		sys-devel/llvm:5
 		sys-devel/llvm:4
-		>=sys-devel/llvm-3.7:0
+		>=sys-devel/llvm-3.9:0
 	)
-	<sys-devel/llvm-6:=
-	>=dev-libs/libconfig-1.4.7
+	<sys-devel/llvm-9:=
 	>=app-eselect/eselect-dlang-20140709"
 DEPEND=">=dev-util/cmake-2.8
 	${RDEPEND}"
-LLVM_MAX_SLOT=5
+LLVM_MAX_SLOT=8
+PATCHES="${FILESDIR}/ldc2-1.12.0-link-defaultlib-shared.patch
+	${FILESDIR}/ldc2-1.13.0-llvm-7.1.0-compatibility.patch"
 
 # For now, we support amd64 multilib. Anyone is free to add more support here.
 MULTILIB_COMPAT=( abi_x86_{32,64} )
+
+DLANG_VERSION_RANGE="2.068 2.071-"
+DLANG_PACKAGE_TYPE="single"
+
+inherit dlang
 
 detect_hardened() {
 	gcc --version | grep -o Hardened
 }
 
-src_configure() {
-	if use abi_x86_32 && use abi_x86_64; then
-		sed -i 's#@ADDITIONAL_DEFAULT_LDC_SWITCHES@#,"-L-rpath=@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@:@CMAKE_INSTALL_PREFIX@/lib@MULTILIB_SUFFIX@"@ADDITIONAL_DEFAULT_LDC_SWITCHES@#' ldc2_install.conf.in || die "Cannot patch ldc2_install.conf.in"
-	else
-		sed -i 's#@ADDITIONAL_DEFAULT_LDC_SWITCHES@#,"-L-rpath=@CMAKE_INSTALL_PREFIX@/lib@LIB_SUFFIX@"@ADDITIONAL_DEFAULT_LDC_SWITCHES@#' ldc2_install.conf.in || die "Cannot patch ldc2_install.conf.in"
-	fi
+src_prepare() {
+	cmake-utils_src_prepare
+}
+
+d_src_configure() {
+	# Make sure libphobos2 is installed into ldc2's directory.
+	export LIBDIR_${ABI}="${LIBDIR_HOST}"
 	local mycmakeargs=(
 		-DD_VERSION=2
-		-DCMAKE_INSTALL_PREFIX=/opt/ldc2-$(ver_cut 1-2)
+		-DCMAKE_INSTALL_PREFIX=/usr/lib/ldc2/$(ver_cut 1-2)
+		-DD_COMPILER="${DMD}"
+		-DD_COMPILER_DMD_COMPAT=1
+		-DLDC_WITH_LLD=OFF
 	)
+	use static-libs && mycmakeargs+=( -DBUILD_SHARED_LIBS=BOTH ) || mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 	use abi_x86_32 && use abi_x86_64 && mycmakeargs+=( -DMULTILIB=ON )
 	detect_hardened && mycmakeargs+=( -DADDITIONAL_DEFAULT_LDC_SWITCHES=', "-relocation-model=pic"' )
 	cmake-utils_src_configure
 }
 
-src_compile() {
+d_src_compile() {
 	cmake-utils_src_make
 }
 
-src_install() {
+d_src_install() {
 	cmake-utils_src_install
 
 	rm -rf "${ED}"/usr/share/bash-completion
