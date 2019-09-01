@@ -1,14 +1,14 @@
-# Copyright 1999-2019 Gentoo Foundation
+# Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
 
 DESCRIPTION="Free Client for OneDrive on Linux"
-HOMEPAGE="https://github.com/skilion/onedrive"
+HOMEPAGE="https://github.com/abraunegg/onedrive"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	>=dev-db/sqlite-3.7.15:3
 	net-misc/curl
@@ -19,7 +19,7 @@ DEPEND="
 	virtual/pkgconfig
 "
 SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz"
-DLANG_VERSION_RANGE="2.079-"
+DLANG_VERSION_RANGE="2.082-"
 DLANG_PACKAGE_TYPE="single"
 IUSE="debug libnotify"
 
