@@ -6,11 +6,11 @@ HOMEPAGE=http://dlang.org/
 IUSE=abi_x86_32 abi_x86_64 dmd-2_079 dmd-2_078 dmd-2_075 dmd-2_077 dmd-2_076 dmd-2_080 dmd-2_081 dmd-2_082 dmd-2_083 dmd-2_084 dmd-2_085 dmd-2_086 dmd-2_087 gdc-7_3_0 ldc2-1_12 ldc2-1_13 ldc2-1_10 ldc2-1_11 ldc2-1_16 ldc2-1_17 ldc2-1_14 ldc2-1_15 ldc2-1_9 +selfhost doc examples static-libs tools
 KEYWORDS=-* ~amd64 ~x86
 LICENSE=Boost-1.0
-PDEPEND=tools? ( >=dev-util/dlang-tools-2.088.0 )
+PDEPEND=tools? ( >=dev-util/dlang-tools-2.088.1 )
 RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
 REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_079 dmd-2_078 dmd-2_075 dmd-2_077 dmd-2_076 dmd-2_080 dmd-2_081 dmd-2_082 dmd-2_083 dmd-2_084 dmd-2_085 dmd-2_086 dmd-2_087 gdc-7_3_0 ldc2-1_12 ldc2-1_13 ldc2-1_10 ldc2-1_11 ldc2-1_16 ldc2-1_17 ldc2-1_14 ldc2-1_15 ldc2-1_9 selfhost )
 RESTRICT=mirror
 SLOT=2.088
-SRC_URI=mirror://aws/2019/dmd.2.088.0.linux.tar.xz
-_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	dlang	96af4dd79fcb6cda297a467ba03cc547	dlang-compilers	1a8ac2b0ed3bdff6f7ac68e542477fad	dmd	ec32273730a17d752ee29fc679a54e93	eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	8a43b9830f1e64a7a5fc0a276afa0275	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multilib-build	0d0c25170069d06d0eb233154229af97	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
+SRC_URI=mirror://aws/2019/dmd.2.088.1.linux.tar.xz
+_eclasses_=desktop	b1d22ac8bdd4679ab79c71aca235009d	dlang	96af4dd79fcb6cda297a467ba03cc547	dlang-compilers	1a8ac2b0ed3bdff6f7ac68e542477fad	dmd	e639375d4b86dc302174077fc2bb053d	eapi7-ver	756b3f27d8e46131d5cf3c51bd876446	epatch	a1bf4756dba418a7238f3be0cb010c54	estack	686eaab303305a908fd57b2fd7617800	eutils	fcb2aa98e1948b835b5ae66ca52868c5	flag-o-matic	8a43b9830f1e64a7a5fc0a276afa0275	ltprune	2729691420b6deeda2a90b1f1183fb55	multibuild	40fe59465edacd730c644ec2bc197809	multilib	1d91b03d42ab6308b5f4f6b598ed110e	multilib-build	0d0c25170069d06d0eb233154229af97	preserve-libs	ef207dc62baddfddfd39a164d9797648	toolchain-funcs	512eb3367f507ebaa1d1d43ab7d66e6c	vcs-clean	2a0f74a496fa2b1552c4f3398258b7bf
 _md5_=9d514c26d171d9a1bab5018bf2143ad4
