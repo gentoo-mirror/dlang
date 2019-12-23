@@ -1,9 +1,9 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit multilib-build cmake-utils eapi7-ver llvm
+inherit multilib-build cmake-utils llvm
 
 MY_PV="${PV//_/-}"
 MY_P="ldc-${MY_PV}-src"
@@ -12,27 +12,31 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="amd64 ~arm ~arm64 ~ppc64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 LICENSE="BSD"
 SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
 IUSE="static-libs"
 
-# We support LLVM 3.7 through 6.
+# We support LLVM 3.9 through 9.
 RDEPEND="|| (
-		sys-devel/llvm:6
+		sys-devel/llvm:9
+		sys-devel/llvm:8
+		sys-devel/llvm:7
 	)
-	<sys-devel/llvm-7:=
+	<sys-devel/llvm-10:=
 	>=app-eselect/eselect-dlang-20140709"
-DEPEND=">=dev-util/cmake-2.8
+DEPEND=">=dev-util/cmake-3.8
+	dev-util/ninja
 	${RDEPEND}"
-LLVM_MAX_SLOT=6
-PATCHES="${FILESDIR}/ldc2-1.9.0-link-defaultlib-shared.patch"
+LLVM_MAX_SLOT=9
+PATCHES="${FILESDIR}/ldc2-1.12.0-link-defaultlib-shared.patch
+	${FILESDIR}/ldc2-1.13.0-llvm-7.1.0-compatibility.patch"
 
 # For now, we support amd64 multilib. Anyone is free to add more support here.
 MULTILIB_COMPAT=( abi_x86_{32,64} )
 
-DLANG_VERSION_RANGE="2.068-"
+DLANG_VERSION_RANGE="2.068 2.071-"
 DLANG_PACKAGE_TYPE="single"
 
 inherit dlang
@@ -52,7 +56,6 @@ d_src_configure() {
 		-DD_VERSION=2
 		-DCMAKE_INSTALL_PREFIX=/usr/lib/ldc2/$(ver_cut 1-2)
 		-DD_COMPILER="${DMD}"
-		-DD_COMPILER_DMD_COMPAT=1
 		-DLDC_WITH_LLD=OFF
 	)
 	use static-libs && mycmakeargs+=( -DBUILD_SHARED_LIBS=BOTH ) || mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
