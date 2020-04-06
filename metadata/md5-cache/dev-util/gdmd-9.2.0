@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Wrapper script for gdc that emulates the dmd command
+EAPI=7
+HOMEPAGE=http://www.gdcproject.org/
+KEYWORDS=amd64 arm arm64 hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc x86 ~ppc-macos
+LICENSE=GPL-3+
+RDEPEND==sys-devel/gcc-9.2.0*[d]
+SLOT=9.2.0
+SRC_URI=https://codeload.github.com/D-Programming-GDC/gdmd/tar.gz/script-0.1.0 -> gdmd-0.1.0.tar.gz
+_md5_=bf1e96dd0d546980b1c4efd8c04c030d
