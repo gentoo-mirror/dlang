@@ -1,9 +1,9 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 
-inherit multilib-build cmake-utils eapi7-ver llvm
+inherit multilib-build cmake llvm
 
 MY_PV="${PV//_/-}"
 MY_P="ldc-${MY_PV}-src"
@@ -12,22 +12,22 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="amd64 ~arm ~arm64 ~ppc64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 LICENSE="BSD"
 SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
 IUSE="static-libs"
 
-# We support LLVM 3.9 through 8.
+# We support LLVM 3.9 through 9.
 RDEPEND="|| (
-		sys-devel/llvm:8
+		sys-devel/llvm:9
 	)
-	<sys-devel/llvm-9:=
+	<sys-devel/llvm-10:=
 	>=app-eselect/eselect-dlang-20140709"
-DEPEND=">=dev-util/cmake-2.8
-	${RDEPEND}"
-LLVM_MAX_SLOT=8
-PATCHES="${FILESDIR}/ldc2-1.15.0-link-defaultlib-shared.patch"
+DEPEND="${RDEPEND}"
+LLVM_MAX_SLOT=9
+PATCHES="${FILESDIR}/ldc2-1.15.0-link-defaultlib-shared.patch\
+	${FILESDIR}/ldc2-1.18.0-FileCheck-not.patch"
 
 # For now, we support amd64 multilib. Anyone is free to add more support here.
 MULTILIB_COMPAT=( abi_x86_{32,64} )
@@ -42,7 +42,7 @@ detect_hardened() {
 }
 
 src_prepare() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 d_src_configure() {
@@ -52,21 +52,16 @@ d_src_configure() {
 		-DD_VERSION=2
 		-DCMAKE_INSTALL_PREFIX=/usr/lib/ldc2/$(ver_cut 1-2)
 		-DD_COMPILER="${DMD}"
-		-DD_COMPILER_DMD_COMPAT=1
 		-DLDC_WITH_LLD=OFF
 	)
 	use static-libs && mycmakeargs+=( -DBUILD_SHARED_LIBS=BOTH ) || mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 	use abi_x86_32 && use abi_x86_64 && mycmakeargs+=( -DMULTILIB=ON )
 	detect_hardened && mycmakeargs+=( -DADDITIONAL_DEFAULT_LDC_SWITCHES=', "-relocation-model=pic"' )
-	cmake-utils_src_configure
-}
-
-d_src_compile() {
-	cmake-utils_src_make
+	cmake_src_configure
 }
 
 d_src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	rm -rf "${ED}"/usr/share/bash-completion
 }

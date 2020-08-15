@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit multilib-build cmake-utils llvm
+inherit multilib-build cmake llvm
 
 MY_PV="${PV//_/-}"
 MY_P="ldc-${MY_PV}-src"
@@ -12,7 +12,7 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="amd64 ~arm ~arm64 ~ppc64 x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
 LICENSE="BSD"
 SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
@@ -25,9 +25,7 @@ RDEPEND="|| (
 	)
 	<sys-devel/llvm-11:=
 	>=app-eselect/eselect-dlang-20140709"
-DEPEND=">=dev-util/cmake-3.8
-	dev-util/ninja
-	${RDEPEND}"
+DEPEND="${RDEPEND}"
 LLVM_MAX_SLOT=10
 PATCHES="${FILESDIR}/ldc2-1.15.0-link-defaultlib-shared.patch"
 
@@ -44,7 +42,7 @@ detect_hardened() {
 }
 
 src_prepare() {
-	cmake-utils_src_prepare
+	cmake_src_prepare
 }
 
 d_src_configure() {
@@ -59,15 +57,11 @@ d_src_configure() {
 	use static-libs && mycmakeargs+=( -DBUILD_SHARED_LIBS=BOTH ) || mycmakeargs+=( -DBUILD_SHARED_LIBS=ON )
 	use abi_x86_32 && use abi_x86_64 && mycmakeargs+=( -DMULTILIB=ON )
 	detect_hardened && mycmakeargs+=( -DADDITIONAL_DEFAULT_LDC_SWITCHES=', "-relocation-model=pic"' )
-	cmake-utils_src_configure
-}
-
-d_src_compile() {
-	cmake-utils_src_make
+	cmake_src_configure
 }
 
 d_src_install() {
-	cmake-utils_src_install
+	cmake_src_install
 
 	rm -rf "${ED}"/usr/share/bash-completion
 }

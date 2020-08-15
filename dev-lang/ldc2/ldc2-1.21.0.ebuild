@@ -12,7 +12,7 @@ S=${WORKDIR}/${MY_P}
 
 DESCRIPTION="LLVM D Compiler"
 HOMEPAGE="https://ldc-developers.github.com/ldc"
-KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86"
+KEYWORDS="amd64 ~arm ~arm64 ~ppc64 x86"
 LICENSE="BSD"
 SLOT="$(ver_cut 1-2)/$(ver_cut 3)"
 
@@ -22,7 +22,6 @@ IUSE="static-libs"
 RDEPEND="|| (
 		sys-devel/llvm:10
 		sys-devel/llvm:9
-		sys-devel/llvm:8
 	)
 	<sys-devel/llvm-11:=
 	>=app-eselect/eselect-dlang-20140709"

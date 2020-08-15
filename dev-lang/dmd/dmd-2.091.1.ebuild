@@ -3,14 +3,14 @@
 
 EAPI=6
 
-KEYWORDS="-* ~amd64 ~x86"
+KEYWORDS="-* amd64 x86"
 YEAR=2020
 DLANG_VERSION_RANGE="2.076-"
 
 inherit dmd
 
 PATCHES=(
-	"${FILESDIR}/2.083-link-32-bit-shared-lib-with-ld.bfd.patch"
+	"${FILESDIR}/2.078-link-32-bit-shared-lib-with-ld.bfd.patch"
 )
 
 dmd_src_prepare_extra() {
