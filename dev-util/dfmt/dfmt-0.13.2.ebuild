@@ -8,8 +8,8 @@ HOMEPAGE="https://github.com/dlang-community/dfmt"
 LICENSE="Boost-1.0"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
-LIBDPARSE="597d9a697b1f8a51fb2f441c61d0c6cc4eadc6d1"
+KEYWORDS="~amd64 ~x86"
+LIBDPARSE="1557eb079a2d5958e0a7136f942eea0922d58e8a"
 ALLOCATOR="ae237cabd1843774cc78aad0729c914a3dd579db"
 SRC_URI="
 	https://github.com/dlang-community/dfmt/archive/v${PV}.tar.gz -> ${PN}-${PV}.tar.gz
@@ -41,7 +41,7 @@ d_src_compile() {
 		"src/dfmt/formatter.d" "src/dfmt/globmatch_editorconfig.d" \
 		${libdparse_src}/dparse/lexer.d ${libdparse_src}/dparse/parser.d ${libdparse_src}/dparse/ast.d \
 		${libdparse_src}/dparse/rollback_allocator.d ${libdparse_src}/dparse/stack_buffer.d \
-		${libdparse_src}/std/experimental/lexer.d \
+		${libdparse_src}/dparse/trivia.d ${libdparse_src}/std/experimental/lexer.d \
 		${allocator_src}/stdx/allocator/common.d ${allocator_src}/stdx/allocator/internal.d \
 		${allocator_src}/stdx/allocator/mallocator.d ${allocator_src}/stdx/allocator/package.d \
 		${allocator_src}/stdx/allocator/gc_allocator.d ${allocator_src}/stdx/allocator/typed.d

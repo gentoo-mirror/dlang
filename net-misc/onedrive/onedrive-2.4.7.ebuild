@@ -8,7 +8,7 @@ HOMEPAGE="https://abraunegg.github.io/"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	>=dev-db/sqlite-3.7.15:3
 	net-misc/curl
@@ -35,7 +35,9 @@ d_src_configure() {
 		export DCFLAGS=${DMDFLAGS}
 	fi
 	econf --disable-version-check --enable-completions $(use_enable debug) $(use_enable libnotify notifications) \
-		--with-zsh-completion-dir=/usr/share/zsh/site-functions --with-bash-completion-dir="$(get_bashcompdir)" \
+		--with-zsh-completion-dir=/usr/share/zsh/site-functions \
+		--with-bash-completion-dir="$(get_bashcompdir)" \
+		--with-fish-completion-dir=/usr/share/fish/completions \
 		--with-systemdsystemunitdir="$(systemd_get_systemunitdir)" \
 		--with-systemduserunitdir="$(systemd_get_userunitdir)"
 }
