@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -8,7 +8,7 @@ HOMEPAGE="http://dlang.org/"
 LICENSE="Boost-1.0"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 TOOLS="ddemangle detab dustmite rdmd"
 IUSE="+ddemangle detab dustmite +rdmd"
 REQUIRED_USE="|| ( ${TOOLS} )"
@@ -36,7 +36,7 @@ S="${WORKDIR}/tools-${VERSION}"
 d_src_compile() {
 	use ddemangle && dlang_compile_bin ddemangle ddemangle.d
 	use detab     && dlang_compile_bin detab     detab.d
-	use dustmite  && dlang_compile_bin dustmite  DustMite/dustmite.d DustMite/splitter.d
+	use dustmite  && dlang_compile_bin dustmite  DustMite/dustmite.d DustMite/splitter.d DustMite/polyhash.d
 	use rdmd      && dlang_compile_bin rdmd      rdmd.d
 }
 
