@@ -21,12 +21,12 @@ IUSE="static-libs"
 # We support LLVM 6.0 through 10.
 RDEPEND="dev-util/ninja
 	|| (
-		sys-devel/llvm:10
+		sys-devel/llvm:11
 	)
-	<sys-devel/llvm-11:=
+	<sys-devel/llvm-12:=
 	>=app-eselect/eselect-dlang-20140709"
 DEPEND="${RDEPEND}"
-LLVM_MAX_SLOT=10
+LLVM_MAX_SLOT=11
 PATCHES="${FILESDIR}/ldc2-1.15.0-link-defaultlib-shared.patch"
 
 # For now, we support amd64 multilib. Anyone is free to add more support here.
