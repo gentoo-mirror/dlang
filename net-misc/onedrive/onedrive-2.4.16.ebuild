@@ -1,4 +1,4 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -8,7 +8,7 @@ HOMEPAGE="https://abraunegg.github.io/"
 LICENSE="GPL-3"
 
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	>=dev-db/sqlite-3.7.15:3
 	net-misc/curl
@@ -19,7 +19,7 @@ DEPEND="
 	virtual/pkgconfig
 "
 SRC_URI="https://codeload.github.com/abraunegg/onedrive/tar.gz/v${PV} -> ${P}.tar.gz"
-DLANG_VERSION_RANGE="2.082-"
+DLANG_VERSION_RANGE="2.087-"
 DLANG_PACKAGE_TYPE="single"
 IUSE="debug libnotify"
 
