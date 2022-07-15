@@ -1,0 +1,17 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare test
+DEPEND=dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_080? ( dev-lang/dmd:2.080= ) gdc-11_2_1? ( =dev-util/gdmd-11.2.1* ) dmd-2_082? ( dev-lang/dmd:2.082= ) dmd-2_089? ( dev-lang/dmd:2.089= ) dmd-2_088? ( dev-lang/dmd:2.088= ) dmd-2_087? ( dev-lang/dmd:2.087= ) dmd-2_086? ( dev-lang/dmd:2.086= ) dmd-2_085? ( dev-lang/dmd:2.085= ) dmd-2_084? ( dev-lang/dmd:2.084= ) dmd-2_098? ( dev-lang/dmd:2.098= ) dmd-2_090? ( dev-lang/dmd:2.090= ) dmd-2_091? ( dev-lang/dmd:2.091= ) dmd-2_092? ( dev-lang/dmd:2.092= ) dmd-2_093? ( dev-lang/dmd:2.093= ) dmd-2_094? ( dev-lang/dmd:2.094= ) dmd-2_095? ( dev-lang/dmd:2.095= ) dmd-2_096? ( dev-lang/dmd:2.096= ) dmd-2_097? ( dev-lang/dmd:2.097= ) ldc2-1_28? ( dev-lang/ldc2:1.28= ) ldc2-1_26? ( dev-lang/ldc2:1.26= ) ldc2-1_27? ( dev-lang/ldc2:1.27= ) ldc2-1_25? ( dev-lang/ldc2:1.25= ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
+DESCRIPTION=Reference compiler for the D programming language
+EAPI=6
+HOMEPAGE=http://dlang.org/
+INHERIT=dmd
+IUSE=abi_x86_32 abi_x86_64 dmd-2_076 dmd-2_077 dmd-2_078 dmd-2_079 dmd-2_080 gdc-11_2_1 dmd-2_082 dmd-2_089 dmd-2_088 dmd-2_087 dmd-2_086 dmd-2_085 dmd-2_084 dmd-2_098 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 ldc2-1_28 ldc2-1_26 ldc2-1_27 ldc2-1_25 +selfhost doc examples static-libs tools
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=Boost-1.0
+PDEPEND=tools? ( >=dev-util/dlang-tools-2.097.2 )
+RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_076 dmd-2_077 dmd-2_078 dmd-2_079 dmd-2_080 gdc-11_2_1 dmd-2_082 dmd-2_089 dmd-2_088 dmd-2_087 dmd-2_086 dmd-2_085 dmd-2_084 dmd-2_098 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 ldc2-1_28 ldc2-1_26 ldc2-1_27 ldc2-1_25 selfhost )
+RESTRICT=mirror
+SLOT=2.097
+SRC_URI=mirror://aws/2021/dmd.2.097.2.linux.tar.xz
+_eclasses_=multibuild	d26d81f242cb193d899a72bca423d0bd	multilib	4fbbbc98f236f1b43acd99476bc3cd85	toolchain-funcs	e9da88162e7a3c60376e80c2c2adcdfb	multilib-build	05f207909a804c9174bc39a00547d598	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	desktop	22952d8f27cac191d75529d4c38e6bfa	edos2unix	33e347e171066657f91f8b0c72ec8773	estack	055c42df72f76a4f45ec92b35e83cd56	epatch	6af347b3c27477b48efaaa1261a0dd69	ltprune	97143780d341cc8d8f1d4c6187a36d29	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	dab5d8ec471d025b79c9e6906bcf3bff	flag-o-matic	a3abd6002fafb3022597be6b8d01f88b	dlang-compilers	22e821c7613e8c07c6ae62cb5ee02052	dlang	1fdd676522006c35b8ea7424c94a1b15	dmd	2247cceed1fccc2ce288799b57b29a0b
+_md5_=fe4f6e9b915b5ea0927b227283fd2e7d
