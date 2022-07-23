@@ -1,17 +1,17 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_080? ( dev-lang/dmd:2.080= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_068? ( dev-lang/dmd:2.068= ) gdc-11_2_1? ( =dev-util/gdmd-11.2.1* ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
+DEPEND=dmd-2_072? ( dev-lang/dmd:2.072= ) dmd-2_073? ( dev-lang/dmd:2.073= ) dmd-2_070? ( dev-lang/dmd:2.070= ) dmd-2_071? ( dev-lang/dmd:2.071= ) dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_074? ( dev-lang/dmd:2.074= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_080? ( dev-lang/dmd:2.080= ) dmd-2_067? ( dev-lang/dmd:2.067= ) dmd-2_069? ( dev-lang/dmd:2.069= ) dmd-2_068? ( dev-lang/dmd:2.068= ) gdc-11_3_0? ( =dev-util/gdmd-11.3.0* ) gdc-11_2_1? ( =dev-util/gdmd-11.2.1* ) net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 app-arch/unzip
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=6
 HOMEPAGE=http://dlang.org/
 INHERIT=dmd
-IUSE=abi_x86_32 abi_x86_64 dmd-2_072 dmd-2_073 dmd-2_070 dmd-2_071 dmd-2_076 dmd-2_077 dmd-2_074 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_080 dmd-2_067 dmd-2_069 dmd-2_068 gdc-11_2_1 +selfhost doc examples static-libs tools
+IUSE=abi_x86_32 abi_x86_64 dmd-2_072 dmd-2_073 dmd-2_070 dmd-2_071 dmd-2_076 dmd-2_077 dmd-2_074 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_080 dmd-2_067 dmd-2_069 dmd-2_068 gdc-11_3_0 gdc-11_2_1 +selfhost doc examples static-libs tools
 KEYWORDS=-* amd64 x86
 LICENSE=Boost-1.0
 PDEPEND=tools? ( >=dev-util/dlang-tools-2.079.1 )
 RDEPEND=net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] >=app-eselect/eselect-dlang-20140709 !dev-lang/dmd-bin
-REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_072 dmd-2_073 dmd-2_070 dmd-2_071 dmd-2_076 dmd-2_077 dmd-2_074 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_080 dmd-2_067 dmd-2_069 dmd-2_068 gdc-11_2_1 selfhost )
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( dmd-2_072 dmd-2_073 dmd-2_070 dmd-2_071 dmd-2_076 dmd-2_077 dmd-2_074 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_080 dmd-2_067 dmd-2_069 dmd-2_068 gdc-11_3_0 gdc-11_2_1 selfhost )
 RESTRICT=mirror
 SLOT=2.079
 SRC_URI=mirror://aws/2018/dmd.2.079.1.linux.tar.xz
-_eclasses_=multibuild	d26d81f242cb193d899a72bca423d0bd	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	multilib-build	05f207909a804c9174bc39a00547d598	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	desktop	22952d8f27cac191d75529d4c38e6bfa	edos2unix	33e347e171066657f91f8b0c72ec8773	estack	055c42df72f76a4f45ec92b35e83cd56	epatch	447396341f5f896d722e435a06f87a4f	ltprune	97143780d341cc8d8f1d4c6187a36d29	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	23cb2d46c80c12aa8b25973b4cdcb257	flag-o-matic	929e29d009c20f55b45c96866ebf47fe	dlang-compilers	22e821c7613e8c07c6ae62cb5ee02052	dlang	1fdd676522006c35b8ea7424c94a1b15	dmd	2247cceed1fccc2ce288799b57b29a0b
+_eclasses_=multibuild	d26d81f242cb193d899a72bca423d0bd	multilib	5ca4e49abed8e3a2f7b56920eadee157	toolchain-funcs	1542e649be915f43f6908a9e93909961	multilib-build	05f207909a804c9174bc39a00547d598	eapi7-ver	1a0a60ad07c8b32d2faba2d085dc0f24	desktop	22952d8f27cac191d75529d4c38e6bfa	edos2unix	33e347e171066657f91f8b0c72ec8773	estack	055c42df72f76a4f45ec92b35e83cd56	epatch	447396341f5f896d722e435a06f87a4f	ltprune	97143780d341cc8d8f1d4c6187a36d29	preserve-libs	a8e50acee31b5759b4df1f7707cae54b	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	vcs-clean	d271b7bc7e6a009758d7d4ef749174e3	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	23cb2d46c80c12aa8b25973b4cdcb257	flag-o-matic	929e29d009c20f55b45c96866ebf47fe	dlang-compilers	505ec6332f808f3ef6a2f8ec3a1a1ccc	dlang	cee3cccbeeaca358bbba8b51a85cdb34	dmd	b2828cb6ef5dc08b85c9c7b949572b3c
 _md5_=2e027b4854960373ca5a8a29ae63de27
