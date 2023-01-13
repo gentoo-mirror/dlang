@@ -2,7 +2,7 @@ BDEPEND=virtual/pkgconfig
 DEFINED_PHASES=compile configure install postinst prepare test
 DEPEND=>=dev-db/sqlite-3.7.15:3 net-misc/curl libnotify? ( x11-libs/libnotify ) virtual/pkgconfig dmd-2_089? ( dev-lang/dmd:2.089= ) dmd-2_088? ( dev-lang/dmd:2.088= ) dmd-2_087? ( dev-lang/dmd:2.087= ) dmd-2_098? ( dev-lang/dmd:2.098= ) dmd-2_099? ( dev-lang/dmd:2.099= ) dmd-2_090? ( dev-lang/dmd:2.090= ) dmd-2_091? ( dev-lang/dmd:2.091= ) dmd-2_092? ( dev-lang/dmd:2.092= ) dmd-2_093? ( dev-lang/dmd:2.093= ) dmd-2_094? ( dev-lang/dmd:2.094= ) dmd-2_095? ( dev-lang/dmd:2.095= ) dmd-2_096? ( dev-lang/dmd:2.096= ) dmd-2_097? ( dev-lang/dmd:2.097= ) ldc2-1_29? ( dev-lang/ldc2:1.29= ) ldc2-1_30? ( dev-lang/ldc2:1.30= )
 DESCRIPTION=Free Client for OneDrive on Linux
-EAPI=7
+EAPI=8
 HOMEPAGE=https://abraunegg.github.io/
 INHERIT=dlang systemd bash-completion-r1
 IUSE=debug libnotify dmd-2_089 dmd-2_088 dmd-2_087 dmd-2_098 dmd-2_099 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 ldc2-1_29 ldc2-1_30
@@ -11,6 +11,6 @@ LICENSE=GPL-3
 RDEPEND=>=dev-db/sqlite-3.7.15:3 net-misc/curl libnotify? ( x11-libs/libnotify ) dmd-2_089? ( dev-lang/dmd:2.089= ) dmd-2_088? ( dev-lang/dmd:2.088= ) dmd-2_087? ( dev-lang/dmd:2.087= ) dmd-2_098? ( dev-lang/dmd:2.098= ) dmd-2_099? ( dev-lang/dmd:2.099= ) dmd-2_090? ( dev-lang/dmd:2.090= ) dmd-2_091? ( dev-lang/dmd:2.091= ) dmd-2_092? ( dev-lang/dmd:2.092= ) dmd-2_093? ( dev-lang/dmd:2.093= ) dmd-2_094? ( dev-lang/dmd:2.094= ) dmd-2_095? ( dev-lang/dmd:2.095= ) dmd-2_096? ( dev-lang/dmd:2.096= ) dmd-2_097? ( dev-lang/dmd:2.097= ) ldc2-1_29? ( dev-lang/ldc2:1.29= ) ldc2-1_30? ( dev-lang/ldc2:1.30= )
 REQUIRED_USE=^^ ( dmd-2_089 dmd-2_088 dmd-2_087 dmd-2_098 dmd-2_099 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 ldc2-1_29 ldc2-1_30 )
 SLOT=0
-SRC_URI=https://codeload.github.com/abraunegg/onedrive/tar.gz/v2.4.20 -> onedrive-2.4.20.tar.gz
-_eclasses_=toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157	edos2unix	33e347e171066657f91f8b0c72ec8773	strip-linguas	ac3ee41ee2d31d8c41a77c0838320cc7	wrapper	4a1902f969e5718126434fc35f3a0d9c	eutils	8f942ebdcf04334697649d4a0bf65a32	flag-o-matic	69394e25812406faa1f90edaf4969395	dlang-compilers	1aa1a97947783fb9df09477459811385	dlang	cee3cccbeeaca358bbba8b51a85cdb34	systemd	5f4bb0758df2e483babf68cd517078ca	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
-_md5_=05306e2c83a41102cd04792c99882c1d
+SRC_URI=https://codeload.github.com/abraunegg/onedrive/tar.gz/v2.4.23 -> onedrive-2.4.23.tar.gz
+_eclasses_=toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	dlang-compilers	1aa1a97947783fb9df09477459811385	dlang	cee3cccbeeaca358bbba8b51a85cdb34	systemd	5f4bb0758df2e483babf68cd517078ca	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
+_md5_=521e2124ce0e933530a1ab47ccf7877a
