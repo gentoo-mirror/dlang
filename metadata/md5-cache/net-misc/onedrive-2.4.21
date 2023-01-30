@@ -12,5 +12,5 @@ RDEPEND=>=dev-db/sqlite-3.7.15:3 net-misc/curl libnotify? ( x11-libs/libnotify )
 REQUIRED_USE=^^ ( dmd-2_089 dmd-2_088 dmd-2_087 dmd-2_098 dmd-2_099 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 ldc2-1_29 ldc2-1_30 )
 SLOT=0
 SRC_URI=https://codeload.github.com/abraunegg/onedrive/tar.gz/v2.4.21 -> onedrive-2.4.21.tar.gz
-_eclasses_=toolchain-funcs	ec8bbc28394c7305b43ea07164bd8f5f	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	dlang-compilers	1aa1a97947783fb9df09477459811385	dlang	cee3cccbeeaca358bbba8b51a85cdb34	systemd	5f4bb0758df2e483babf68cd517078ca	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
+_eclasses_=toolchain-funcs	9a610728b9bcca1919234cceb35a1027	multilib	5ca4e49abed8e3a2f7b56920eadee157	flag-o-matic	69394e25812406faa1f90edaf4969395	dlang-compilers	1aa1a97947783fb9df09477459811385	dlang	cee3cccbeeaca358bbba8b51a85cdb34	systemd	5f4bb0758df2e483babf68cd517078ca	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
 _md5_=521e2124ce0e933530a1ab47ccf7877a
