@@ -7,6 +7,6 @@ dev-util/dfmt 0.13.4: Dfmt is a formatter for D source code
 dev-util/dlang-tools 2.064.2 2.065.0 2.066.1 2.067.1 2.068.2 2.069.1 2.070.2 2.071.2 2.072.2 2.073.2 2.074.1 2.075.1 2.076.1 2.077.1 2.078.3 2.079.1 2.080.1 2.081.2 2.082.1 2.083.1 2.084.1 2.085.1 2.086.1 2.087.1 2.088.1 2.089.1 2.090.1 2.091.1 2.092.1 2.093.1 2.094.2 2.095.1 2.096.1 2.097.2 2.098.1 2.099.1: Ancilliary tools for the D programming language compiler
 dev-util/dscanner 0.11.1: Swiss-army knife for D source code
 dev-util/dub 1.29.0: Package and build management system for D
-dev-util/gdmd 11.2.1 11.3.0: Wrapper script for gdc that emulates the dmd command
-net-misc/onedrive 2.4.21 2.4.22 2.4.23: Free Client for OneDrive on Linux
+dev-util/gdmd 11 12: Wrapper script for gdc that emulates the dmd command
+net-misc/onedrive 2.4.23 2.4.25: Free Client for OneDrive on Linux
 x11-terms/tilix 1.9.3-r2: A tiling terminal emulator for Linux using GTK+ 3
