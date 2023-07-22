@@ -5,16 +5,25 @@
 # @DESCRIPTION:
 # Contains the available D compiler versions with their stable archs.
 
-if [[ ${___ECLASS_ONCE_DLANG_COMPILERS} != "recur -_+^+_- spank" ]] ; then
-___ECLASS_ONCE_DLANG_COMPILERS="recur -_+^+_- spank"
+if [[ ${_ECLASS_ONCE_DLANG_COMPILERS} != "recur -_+^+_- spank" ]] ; then
+_ECLASS_ONCE_DLANG_COMPILERS="recur -_+^+_- spank"
 
+# @FUNCTION: dlang-compilers_declare_versions
+# @DESCRIPTION:
+# Exports an associative array of all available Dlang compiler versions and their corresponding language support as well
+# as the list of stable and unstable keywords. The language support is basically the DMD front-end version that the
+# compiler is based on. For DMD it will be the same as the compiler version, while for GDC and LDC2 it will differ.
+# The keywords are required, because we offer many compilers to be used for Dlang packages and pull them in as build
+# time dependencies. A stable package cannot depend on an unstable package though, so short of manually looking for
+# KEYWORDS in compiler ebuilds we just keep them up-to-date here. GDC in particular needs constant attention as
+# architectures get markes stable all the time.
 dlang-compilers_declare_versions() {
-	declare -gA __dlang_dmd_frontend
-	declare -gA __dlang_gdc_frontend
-	declare -gA __dlang_ldc2_frontend
+	declare -gA _dlang_dmd_frontend
+	declare -gA _dlang_gdc_frontend
+	declare -gA _dlang_ldc2_frontend
 
 	# DMD
-	__dlang_dmd_frontend=(
+	_dlang_dmd_frontend=(
 		["2.064"]="2.064 x86 amd64"
 		["2.065"]="2.065 x86 amd64"
 		["2.066"]="2.066 x86 amd64"
@@ -54,7 +63,7 @@ dlang-compilers_declare_versions() {
 	)
 
 	# GDC (hppa, sparc: masked "d" USE-flag)
-	__dlang_gdc_frontend=(
+	_dlang_gdc_frontend=(
 		["11.3.1_p20221209"]="2.076 ~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 		["11.3.1_p20230120"]="2.076 ~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 		["11.3.1_p20230303"]="2.076 ~alpha ~amd64 ~arm ~arm64 ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
@@ -63,7 +72,7 @@ dlang-compilers_declare_versions() {
 	)
 
 	# LDC
-	__dlang_ldc2_frontend=(
+	_dlang_ldc2_frontend=(
 		["1.29"]="2.099 amd64 ~arm ~arm64 ~ppc64 x86"
 		["1.30"]="2.100 ~amd64 ~arm ~arm64 ~ppc64 ~x86"
 	)
