@@ -11,5 +11,5 @@ RDEPEND=>=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.8.5:3[vte,dmd-2_076?,dmd-
 REQUIRED_USE=^^ ( dmd-2_076 dmd-2_077 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_083 dmd-2_082 dmd-2_081 dmd-2_080 dmd-2_086 dmd-2_085 dmd-2_084 gdc-11_4_0 gdc-11_3_1_p20230427 gdc-11_4_1_p20230622 ) amd64? ( !gdc-11_4_0 ) x86? ( !gdc-11_4_0 ) amd64? ( !gdc-11_4_1_p20230622 )
 SLOT=0
 SRC_URI=https://codeload.github.com/gnunn1/tilix/tar.gz/1.9.3 -> tilix-1.9.3.tar.gz
-_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	be27a904c614cb93ae037762dc69bcc2	dlang-compilers	5b4b89f68d109856a605fb6a2c9acffc	dlang	5fa768f4660bc3359eba9c04cab5d7af
+_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	be27a904c614cb93ae037762dc69bcc2	dlang-compilers	b4e7c3cb9f7495e11651d4a04cf95e65	dlang	5fa768f4660bc3359eba9c04cab5d7af
 _md5_=9227c716975e9c9debd4b139e4a26f25
