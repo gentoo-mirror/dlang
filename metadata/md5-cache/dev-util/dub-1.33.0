@@ -11,5 +11,5 @@ RDEPEND=!arm64? ( dmd-2_102? ( dev-lang/dmd:2.102= ) ) !arm64? ( dmd-2_103? ( de
 REQUIRED_USE=^^ ( dmd-2_102 dmd-2_103 dmd-2_100 dmd-2_101 dmd-2_104 dmd-2_105 dmd-2_098 dmd-2_099 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 gdc-12_2_1_p20230428 gdc-13_1_1_p20230527 gdc-13_2_0 gdc-12_3_1_p20230526 gdc-12_3_1_p20230623 ldc2-1_29 ldc2-1_30 ) arm64? ( !dmd-2_102 ) arm64? ( !dmd-2_103 ) arm64? ( !dmd-2_100 ) arm64? ( !dmd-2_101 ) arm64? ( !dmd-2_104 ) arm64? ( !dmd-2_105 ) arm64? ( !dmd-2_098 ) arm64? ( !dmd-2_099 ) arm64? ( !dmd-2_092 ) arm64? ( !dmd-2_093 ) arm64? ( !dmd-2_094 ) arm64? ( !dmd-2_095 ) arm64? ( !dmd-2_096 ) arm64? ( !dmd-2_097 )
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/dub/tar.gz/v1.33.0 -> dub-1.33.0.tar.gz
-_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	be27a904c614cb93ae037762dc69bcc2	dlang-compilers	b4e7c3cb9f7495e11651d4a04cf95e65	dlang	5fa768f4660bc3359eba9c04cab5d7af
+_eclasses_=toolchain-funcs	fbbbc99d10168de2926e06da7169b8dc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	e5cc383ea8420f92fe3737be790021dc	dlang-compilers	b4e7c3cb9f7495e11651d4a04cf95e65	dlang	5fa768f4660bc3359eba9c04cab5d7af
 _md5_=337fcb01b30db52d874c4de0da4e4172
