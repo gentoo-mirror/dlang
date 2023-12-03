@@ -11,6 +11,6 @@ RDEPEND=dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dm
 REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_076 dmd-2_077 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_089 dmd-2_088 dmd-2_083 dmd-2_082 dmd-2_081 dmd-2_080 dmd-2_087 dmd-2_086 dmd-2_085 dmd-2_084 dmd-2_102 dmd-2_103 dmd-2_100 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 dmd-2_098 dmd-2_099 dmd-2_090 dmd-2_091 dmd-2_092 dmd-2_093 dmd-2_094 dmd-2_095 dmd-2_096 dmd-2_097 gdc-12 gdc-13 gdc-11 ldc2-1_29 ldc2-1_35 ldc2-1_34 ldc2-1_31 ldc2-1_30 ldc2-1_33 ldc2-1_32 )
 RESTRICT=mirror
 SLOT=0
-SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.104.2 -> dlang-tools-2.104.2.tar.gz
+SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.106.0 -> dlang-tools-2.106.0.tar.gz
 _eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	6b3c606c5de2531072ffd36eca06a5a9	dlang-compilers	0d56749f50ccf72e65a33ecb3218692e	dlang	cfb7616c87d05018933ca85ce5df2180	xdg-utils	baea6080dd821f5562d715887954c9d3
 _md5_=8a71ada54adadace142b73cc8be1cab5
