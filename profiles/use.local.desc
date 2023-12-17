@@ -5,7 +5,6 @@
 dev-lang/dmd:selfhost - Bootstrap dmd using an upstream provided compiler binary
 dev-lang/dmd:tools - Pulls in dev-util/dlang-tools
 dev-libs/gtkd:gstreamer - Build additional bindings to media-libs/gstreamer
-dev-libs/gtkd:libgda - Build additional bindings to gnome-extra/libgda
 dev-libs/gtkd:opengl - Build additional bindings to x11-libs/gtkglext
 dev-libs/gtkd:peas - Build additonal bindings to dev-libs/libpeas
 dev-libs/gtkd:sourceview - Build additional bindings to x11-libs/gtksourceview

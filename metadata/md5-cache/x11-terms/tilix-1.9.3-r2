@@ -1,15 +1,15 @@
 DEFINED_PHASES=compile configure install prepare test
-DEPEND=sys-devel/automake:1.16 >=sys-devel/autoconf-2.69 app-text/po4a >=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.8.5:3[vte,dmd-2_076?,dmd-2_077?,dmd-2_075?,dmd-2_078?,dmd-2_079?,dmd-2_083?,dmd-2_082?,dmd-2_081?,dmd-2_080?,dmd-2_086?,dmd-2_085?,dmd-2_084?,gdc-11?] x11-libs/vte:2.91[crypt?] dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_083? ( dev-lang/dmd:2.083= ) dmd-2_082? ( dev-lang/dmd:2.082= ) dmd-2_081? ( dev-lang/dmd:2.081= ) dmd-2_080? ( dev-lang/dmd:2.080= ) dmd-2_086? ( dev-lang/dmd:2.086= ) dmd-2_085? ( dev-lang/dmd:2.085= ) dmd-2_084? ( dev-lang/dmd:2.084= ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 )
+DEPEND=sys-devel/automake:1.16 >=sys-devel/autoconf-2.69 app-text/po4a >=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.8.5:3[vte,dmd-2_086?,gdc-11?] x11-libs/vte:2.91[crypt?] dmd-2_086? ( dev-lang/dmd:2.086= ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 )
 DESCRIPTION=A tiling terminal emulator for Linux using GTK+ 3
 EAPI=7
 HOMEPAGE=https://gnunn1.github.io/tilix-web/
 INHERIT=dlang
-IUSE=+crypt dmd-2_076 dmd-2_077 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_083 dmd-2_082 dmd-2_081 dmd-2_080 dmd-2_086 dmd-2_085 dmd-2_084 gdc-11
+IUSE=+crypt dmd-2_086 gdc-11
 KEYWORDS=amd64 x86
 LICENSE=MPL-2.0
-RDEPEND=>=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.8.5:3[vte,dmd-2_076?,dmd-2_077?,dmd-2_075?,dmd-2_078?,dmd-2_079?,dmd-2_083?,dmd-2_082?,dmd-2_081?,dmd-2_080?,dmd-2_086?,dmd-2_085?,dmd-2_084?,gdc-11?] x11-libs/vte:2.91[crypt?] dmd-2_076? ( dev-lang/dmd:2.076= ) dmd-2_077? ( dev-lang/dmd:2.077= ) dmd-2_075? ( dev-lang/dmd:2.075= ) dmd-2_078? ( dev-lang/dmd:2.078= ) dmd-2_079? ( dev-lang/dmd:2.079= ) dmd-2_083? ( dev-lang/dmd:2.083= ) dmd-2_082? ( dev-lang/dmd:2.082= ) dmd-2_081? ( dev-lang/dmd:2.081= ) dmd-2_080? ( dev-lang/dmd:2.080= ) dmd-2_086? ( dev-lang/dmd:2.086= ) dmd-2_085? ( dev-lang/dmd:2.085= ) dmd-2_084? ( dev-lang/dmd:2.084= ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 )
-REQUIRED_USE=^^ ( dmd-2_076 dmd-2_077 dmd-2_075 dmd-2_078 dmd-2_079 dmd-2_083 dmd-2_082 dmd-2_081 dmd-2_080 dmd-2_086 dmd-2_085 dmd-2_084 gdc-11 )
+RDEPEND=>=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.8.5:3[vte,dmd-2_086?,gdc-11?] x11-libs/vte:2.91[crypt?] dmd-2_086? ( dev-lang/dmd:2.086= ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 )
+REQUIRED_USE=^^ ( dmd-2_086 gdc-11 )
 SLOT=0
 SRC_URI=https://codeload.github.com/gnunn1/tilix/tar.gz/1.9.3 -> tilix-1.9.3.tar.gz
-_eclasses_=toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	c816c598969cbaf38cc02d2496ad2e98	dlang-compilers	0d56749f50ccf72e65a33ecb3218692e	dlang	46ab1aaf68d408855a7c20432d5e57e9
+_eclasses_=toolchain-funcs	eed10cf5e5a06916e654d31f5a1925cc	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	c816c598969cbaf38cc02d2496ad2e98	dlang-compilers	e232278d87d7d846b9091b0cebb8bc84	dlang	46ab1aaf68d408855a7c20432d5e57e9
 _md5_=9227c716975e9c9debd4b139e4a26f25
