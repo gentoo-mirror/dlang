@@ -8,6 +8,7 @@ dev-util/dlang-tools 2.104.2 2.106.0: Ancilliary tools for the D programming lan
 dev-util/dscanner 0.11.1: Swiss-army knife for D source code
 dev-util/dub 1.33.0: Package and build management system for D
 dev-util/gdmd 11 12 13: Wrapper script for gdc that emulates the dmd command
+dev-util/serve-d 0.8.0_beta15: Microsoft language server protocol implementation for D
 net-misc/onedrive 2.4.25: Free Client for OneDrive on Linux
 net-misc/onedrivegui 1.0.3 9999: A simple GUI for OneDrive Linux client, with multi-account support.
 x11-terms/tilix 1.9.3-r2 1.9.6: A tiling terminal emulator for Linux using GTK+ 3
