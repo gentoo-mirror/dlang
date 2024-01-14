@@ -1,16 +1,16 @@
 DEFINED_PHASES=compile configure install postinst postrm prepare test
-DEPEND=dmd-2_102? ( dev-lang/dmd:2.102= ) dmd-2_103? ( dev-lang/dmd:2.103= ) dmd-2_101? ( dev-lang/dmd:2.101= ) dmd-2_106? ( dev-lang/dmd:2.106= ) dmd-2_104? ( dev-lang/dmd:2.104= ) dmd-2_105? ( dev-lang/dmd:2.105= ) gdc-12? ( sys-devel/gcc:12[d,-d-bootstrap(-)] dev-util/gdmd:12 ) gdc-13? ( sys-devel/gcc:13[d,-d-bootstrap(-)] dev-util/gdmd:13 ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 ) ldc2-1_35? ( dev-lang/ldc2:1.35= ) ldc2-1_34? ( dev-lang/ldc2:1.34= ) ldc2-1_33? ( dev-lang/ldc2:1.33= ) ldc2-1_32? ( dev-lang/ldc2:1.32= )
+DEPEND=dmd-2_102? ( dev-lang/dmd:2.102= ) dmd-2_103? ( dev-lang/dmd:2.103= ) dmd-2_101? ( dev-lang/dmd:2.101= ) dmd-2_106? ( dev-lang/dmd:2.106= ) dmd-2_104? ( dev-lang/dmd:2.104= ) dmd-2_105? ( dev-lang/dmd:2.105= ) gdc-12? ( sys-devel/gcc:12[d,-d-bootstrap(-)] dev-util/gdmd:12 ) gdc-13? ( sys-devel/gcc:13[d,-d-bootstrap(-)] dev-util/gdmd:13 ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 ) ldc2-1_35? ( dev-lang/ldc2:1.35= ) ldc2-1_34? ( dev-lang/ldc2:1.34= ) ldc2-1_36? ( dev-lang/ldc2:1.36= ) ldc2-1_33? ( dev-lang/ldc2:1.33= ) ldc2-1_32? ( dev-lang/ldc2:1.32= )
 DESCRIPTION=Ancilliary tools for the D programming language compiler
 EAPI=8
 HOMEPAGE=http://dlang.org/
 INHERIT=desktop dlang xdg-utils
-IUSE=+ddemangle detab dustmite +rdmd dmd-2_102 dmd-2_103 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 gdc-12 gdc-13 gdc-11 ldc2-1_35 ldc2-1_34 ldc2-1_33 ldc2-1_32
+IUSE=+ddemangle detab dustmite +rdmd dmd-2_102 dmd-2_103 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 gdc-12 gdc-13 gdc-11 ldc2-1_35 ldc2-1_34 ldc2-1_36 ldc2-1_33 ldc2-1_32
 KEYWORDS=~amd64 ~x86
 LICENSE=Boost-1.0
-RDEPEND=dmd-2_102? ( dev-lang/dmd:2.102= ) dmd-2_103? ( dev-lang/dmd:2.103= ) dmd-2_101? ( dev-lang/dmd:2.101= ) dmd-2_106? ( dev-lang/dmd:2.106= ) dmd-2_104? ( dev-lang/dmd:2.104= ) dmd-2_105? ( dev-lang/dmd:2.105= ) gdc-12? ( sys-devel/gcc:12[d,-d-bootstrap(-)] dev-util/gdmd:12 ) gdc-13? ( sys-devel/gcc:13[d,-d-bootstrap(-)] dev-util/gdmd:13 ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 ) ldc2-1_35? ( dev-lang/ldc2:1.35= ) ldc2-1_34? ( dev-lang/ldc2:1.34= ) ldc2-1_33? ( dev-lang/ldc2:1.33= ) ldc2-1_32? ( dev-lang/ldc2:1.32= )
-REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_102 dmd-2_103 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 gdc-12 gdc-13 gdc-11 ldc2-1_35 ldc2-1_34 ldc2-1_33 ldc2-1_32 )
+RDEPEND=dmd-2_102? ( dev-lang/dmd:2.102= ) dmd-2_103? ( dev-lang/dmd:2.103= ) dmd-2_101? ( dev-lang/dmd:2.101= ) dmd-2_106? ( dev-lang/dmd:2.106= ) dmd-2_104? ( dev-lang/dmd:2.104= ) dmd-2_105? ( dev-lang/dmd:2.105= ) gdc-12? ( sys-devel/gcc:12[d,-d-bootstrap(-)] dev-util/gdmd:12 ) gdc-13? ( sys-devel/gcc:13[d,-d-bootstrap(-)] dev-util/gdmd:13 ) gdc-11? ( sys-devel/gcc:11[d,-d-bootstrap(-)] dev-util/gdmd:11 ) ldc2-1_35? ( dev-lang/ldc2:1.35= ) ldc2-1_34? ( dev-lang/ldc2:1.34= ) ldc2-1_36? ( dev-lang/ldc2:1.36= ) ldc2-1_33? ( dev-lang/ldc2:1.33= ) ldc2-1_32? ( dev-lang/ldc2:1.32= )
+REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ^^ ( dmd-2_102 dmd-2_103 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 gdc-12 gdc-13 gdc-11 ldc2-1_35 ldc2-1_34 ldc2-1_36 ldc2-1_33 ldc2-1_32 )
 RESTRICT=mirror
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.106.1 -> dlang-tools-2.106.1.tar.gz
-_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	78cf3cc2d5572fddf5e5e10c70f7c81a	dlang-compilers	5a566c2454fb3849c08bf2a5112821ad	dlang	46ab1aaf68d408855a7c20432d5e57e9	xdg-utils	baea6080dd821f5562d715887954c9d3
+_eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	78cf3cc2d5572fddf5e5e10c70f7c81a	dlang-compilers	e53399f41b3860d67fdce9650dbcd72d	dlang	46ab1aaf68d408855a7c20432d5e57e9	xdg-utils	baea6080dd821f5562d715887954c9d3
 _md5_=8a71ada54adadace142b73cc8be1cab5
