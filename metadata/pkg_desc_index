@@ -1,6 +1,6 @@
 app-eselect/eselect-dlang 20190608 20240103: Eselect module for management of multiple D versions
 dev-lang/dmd 2.101.2 2.102.2 2.103.1 2.104.2 2.105.3 2.106.1: Reference compiler for the D programming language
-dev-lang/ldc2 1.32.2 1.33.0 1.34.0 1.35.0 1.35.0-r1 1.36.0: LLVM D Compiler
+dev-lang/ldc2 1.32.2 1.32.2-r1 1.33.0 1.33.0-r1 1.34.0 1.34.0-r1 1.35.0 1.35.0-r2 1.36.0-r1: LLVM D Compiler
 dev-libs/gtkd 3.10.0-r1: GtkD is a D binding and OO wrapper of GTK+
 dev-util/dcd 0.13.4 0.15.2: Auto-complete program for the D programming language
 dev-util/dfmt 0.13.4: Dfmt is a formatter for D source code
