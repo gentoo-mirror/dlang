@@ -12,5 +12,5 @@ REQUIRED_USE=^^ ( dmd-2_102 dmd-2_103 dmd-2_101 dmd-2_106 dmd-2_104 dmd-2_105 gd
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/dub/tar.gz/v1.35.1 -> dub-1.35.1.tar.gz test? ( https://code.dlang.org/packages/gitcompatibledubpackage/1.0.1.zip -> gitcompatibledubpackage-1.0.1.zip https://code.dlang.org/packages/gitcompatibledubpackage/1.0.4.zip -> gitcompatibledubpackage-1.0.4.zip https://code.dlang.org/packages/urld/2.1.1.zip -> urld-2.1.1.zip )
-_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	b2b07efa51009704f88173b2c7feab47	dlang-compilers	e53399f41b3860d67fdce9650dbcd72d	dlang	46ab1aaf68d408855a7c20432d5e57e9
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	flag-o-matic	24c947ff5f858625cf0b33c15eed4425	dlang-compilers	e53399f41b3860d67fdce9650dbcd72d	dlang	46ab1aaf68d408855a7c20432d5e57e9
 _md5_=beb581b841efee736cffcc2099b8f465
