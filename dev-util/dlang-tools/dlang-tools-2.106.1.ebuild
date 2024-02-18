@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -8,7 +8,7 @@ HOMEPAGE="http://dlang.org/"
 LICENSE="Boost-1.0"
 
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86"
 TOOLS="ddemangle detab dustmite rdmd"
 IUSE="+ddemangle detab dustmite +rdmd"
 REQUIRED_USE="|| ( ${TOOLS} )"
@@ -25,7 +25,7 @@ if [[ -n "${BETA}" ]]; then
 fi
 SRC_URI="https://codeload.github.com/dlang/tools/tar.gz/v${VERSION} -> dlang-tools-${VERSION}.tar.gz"
 
-DLANG_VERSION_RANGE="2.075-"
+DLANG_VERSION_RANGE="2.075-2.106"
 DLANG_PACKAGE_TYPE="single"
 
 inherit desktop dlang xdg-utils
