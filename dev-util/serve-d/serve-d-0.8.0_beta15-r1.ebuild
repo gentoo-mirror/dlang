@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ MY_VER="$(ver_rs 3 - 4 .)" # 0.8.0_beta15 -> 0.8.0-beta.15
 
 DESCRIPTION="Microsoft language server protocol implementation for D"
 HOMEPAGE="https://github.com/Pure-D/serve-d"
-SRC_URI="https://code.dlang.org/packages/serve-d/${MY_VER}.zip -> ${PF}.zip
+SRC_URI="https://code.dlang.org/packages/serve-d/${MY_VER}.zip -> ${P}.zip
 
 https://code.dlang.org/packages/automem/0.6.9.zip -> automem-0.6.9.zip
 https://code.dlang.org/packages/botan/1.12.19.zip -> botan-1.12.19.zip
@@ -57,7 +57,7 @@ S="${WORKDIR}/${PN}-${MY_VER}"
 SLOT="0"
 KEYWORDS="~amd64"
 
-DLANG_VERSION_RANGE="2.100-2.106"
+DLANG_VERSION_RANGE="2.100-2.107"
 DLANG_PACKAGE_TYPE="single"
 # gdc currently fails due to a bug in mir-cpuid, see: https://github.com/libmir/mir-cpuid/pull/46
 DLANG_COMPILER_DISABLED_BACKENDS=(gdc)
@@ -68,11 +68,10 @@ inherit check-reqs dlang multiprocessing
 
 # Lower versions of dcd won't immediately fail but they won't work as intended (no autocompletion for example)
 RDEPEND=">=dev-util/dcd-0.15.2"
-DEPEND=""
 BDEPEND="dev-util/dub app-arch/unzip"
 
 src_unpack() {
-	unpack "${PF}.zip"
+	unpack "${P}.zip"
 	pushd "${S}" || die
 
 	local dep name ver dub_args
@@ -87,7 +86,7 @@ src_unpack() {
 		--cache=local
 	)
 	for dep in ${A}; do
-		if [[ ${dep} != ${PF}.zip ]]; then
+		if [[ ${dep} != ${P}.zip ]]; then
 			# Due to a bug in dub, we can't have similar looking
 			# archives in the same directory. Simply put, if we had:
 			# foo-1.zip and foo-bar-2.zip when trying to fetch foo dub
@@ -122,7 +121,7 @@ d_src_compile() {
 		--skip-registry=all
 	)
 
-	DFLAGS="${DCFLAGS}" DUB_HOME="${S}" /usr/bin/dub build "${dub_args[@]}" || die
+	DFLAGS="$(get_dflags)" DUB_HOME="${S}" /usr/bin/dub build "${dub_args[@]}" || die
 }
 
 d_src_test() {
@@ -147,11 +146,50 @@ d_src_test() {
 	# See: https://github.com/Pure-D/serve-d/issues/351
 	for subpkg in ":http" ":protocol" ":lsp" ":serverbase" ":workspace-d" ""; do
 		# Let $subpkg be shell expanded since it can be empty
-		DUB_HOME="${S}" DFLAGS="${DCFLAGS}" /usr/bin/dub test ${subpkg} --build=unittest "${dub_args[@]}" \
+		DUB_HOME="${S}" DFLAGS="$(get_dflags)" /usr/bin/dub test ${subpkg} --build=unittest "${dub_args[@]}" \
 			|| die "Tests failed"
 	done
 }
 
 d_src_install() {
 	dobin "${S}/serve-d"
+}
+
+get_dflags() {
+	# See https://issues.dlang.org/show_bug.cgi?id=24406 and
+	# https://github.com/Pure-D/serve-d/issues/360
+	# For short, we have to remove -O from DCFLAGS for dmd.
+	#
+	# There's also an issue with ldc that when -mcpu=native is specified
+	# you get an llvm stack trace. I have to investigate it further
+	# before reporting. -mcpu=<resolve-march-native> works though, idk.
+	# For now just remove -mcpu=native for ldc2.
+	case "${DLANG_VENDOR}" in
+		GNU) echo "${DCFLAGS}" ;;
+		LDC)
+			# Use a file since we can't export variables because we're
+			# called in $().
+			if [[ ${DCFLAGS} == *-mcpu=native* && ! -e ${T}/ldc2-flags-warned ]]; then
+				touch "${T}"/ldc2-flags-warned || die
+
+				ewarn "-mcpu=native causes issues with ldc2 so it will be removed"
+				ewarn "from your flags. If you still want to specify it use"
+				ewarn "app-misc/resolve-march-native to get your actual architecture"
+				ewarn "and use that with -mcpu, like in -mcpu=znver3."
+			fi
+			echo "${DCFLAGS//-mcpu=native/}"
+			;;
+		DigitalMars)
+			if [[ ${DCFLAGS} == *-O* && ! -e ${T}/dmd-flags-warned ]]; then
+				touch "${T}"/dmd-flags-warned || die
+
+				ewarn "Optimizations will be turned off for this build with dmd"
+				ewarn "See: https://github.com/Pure-D/serve-d/issues/360"
+			fi
+			echo "${DCFLAGS//-O/}"
+			;;
+		*)
+			die "Unknown DLANG_VENDOR: ${DLANG_VENDOR}"
+			;;
+	esac
 }
