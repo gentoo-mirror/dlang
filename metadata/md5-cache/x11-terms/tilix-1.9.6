@@ -1,4 +1,4 @@
-BDEPEND=app-text/po4a dev-libs/appstream test? ( dev-util/desktop-file-utils ) >=dev-build/meson-1.2.1 app-alternatives/ninja dev-build/meson-format-array
+BDEPEND=app-text/po4a dev-libs/appstream test? ( dev-util/desktop-file-utils ) >=dev-build/meson-1.2.3 app-alternatives/ninja dev-build/meson-format-array
 DEFINED_PHASES=compile configure install postinst postrm prepare test
 DEPEND=>=sys-devel/gettext-0.19.8.1 >=dev-libs/gtkd-3.10.0-r1:3[vte,ldc2-1_35?,ldc2-1_34?,ldc2-1_36?,ldc2-1_33?,ldc2-1_32?] sys-libs/libunwind gnome-base/gsettings-desktop-schemas ldc2-1_35? ( dev-lang/ldc2:1.35= ) ldc2-1_34? ( dev-lang/ldc2:1.34= ) !x86? ( !amd64? ( ldc2-1_36? ( dev-lang/ldc2:1.36= ) ) ) ldc2-1_33? ( dev-lang/ldc2:1.33= ) ldc2-1_32? ( dev-lang/ldc2:1.32= )
 DESCRIPTION=A tiling terminal emulator for Linux using GTK+ 3
@@ -13,5 +13,5 @@ REQUIRED_USE=^^ ( ldc2-1_35 ldc2-1_34 ldc2-1_36 ldc2-1_33 ldc2-1_32 ) amd64? ( !
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://codeload.github.com/gnunn1/tilix/tar.gz/1.9.6 -> tilix-1.9.6.tar.gz
-_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	xdg-utils	baea6080dd821f5562d715887954c9d3	gnome2-utils	30dbce54b89e77b86f366548f94419ad	flag-o-matic	24c947ff5f858625cf0b33c15eed4425	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	python-utils-r1	8904b60325f22500b0c3ad4b68a42448	meson	bd1d5eaa305de6645e939caa7a352e3c	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54	dlang-compilers	2bfb5e51d931808b66ef46f303d58ec8	dlang	46ab1aaf68d408855a7c20432d5e57e9
+_eclasses_=toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	multilib	c19072c3cd7ac5cb21de013f7e9832e0	xdg-utils	baea6080dd821f5562d715887954c9d3	gnome2-utils	30dbce54b89e77b86f366548f94419ad	flag-o-matic	24c947ff5f858625cf0b33c15eed4425	multiprocessing	30ead54fa2e2b5f9cd4e612ffc34d0fe	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	eapi8-dosym	5ac4857ad078256d939c44f7c64197a9	python-utils-r1	8904b60325f22500b0c3ad4b68a42448	meson	56446e0ef4b4c9af0e2dd4cdef1a086e	optfeature	222cb475c5a4f7ae7cfb0bf510a6fe54	dlang-compilers	2bfb5e51d931808b66ef46f303d58ec8	dlang	46ab1aaf68d408855a7c20432d5e57e9
 _md5_=47ea208b6703723878418c2a9a26b8b6
