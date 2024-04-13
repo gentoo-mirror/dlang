@@ -1,0 +1,16 @@
+BDEPEND=dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) virtual/pkgconfig
+DEFINED_PHASES=configure install postinst setup
+DEPEND=dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) >=dev-db/sqlite-3.7.15:3 net-misc/curl libnotify? ( x11-libs/libnotify ) virtual/pkgconfig
+DESCRIPTION=Free Client for OneDrive on Linux
+EAPI=8
+HOMEPAGE=https://abraunegg.github.io/
+INHERIT=dlang-single systemd bash-completion-r1
+IUSE=debug libnotify dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) >=dev-db/sqlite-3.7.15:3 net-misc/curl libnotify? ( x11-libs/libnotify )
+REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 ) )
+SLOT=0
+SRC_URI=https://codeload.github.com/abraunegg/onedrive/tar.gz/v2.4.25 -> onedrive-2.4.25.tar.gz
+_eclasses_=dlang-compilers-r1	4fdf799ec97beff7e54eb7c472d9f67e	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	dlang-utils	bfcca557267f284db7bcd78106ef2842	dlang-single	5834f65cab963fec5bf1fc1490b3363d	systemd	c8b03e8df84486aa991d4396686e8942	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
+_md5_=259df1bdeb40eaa53ce4dd16a5847e11

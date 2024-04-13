@@ -1,0 +1,16 @@
+BDEPEND=!arm64? ( dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) ) !arm64? ( dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:13 ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= )
+DEFINED_PHASES=compile install prepare setup test
+DEPEND=!arm64? ( dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) ) !arm64? ( dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:13 ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= )
+DESCRIPTION=Dfmt is a formatter for D source code
+EAPI=8
+HOMEPAGE=https://github.com/dlang-community/dfmt
+INHERIT=dlang-single bash-completion-r1
+IUSE=dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36
+KEYWORDS=~amd64 ~arm64 ~x86
+LICENSE=Boost-1.0
+RDEPEND=!arm64? ( dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) ) !arm64? ( dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:13 ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= )
+REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 ) dlang_single_target_dmd-2_106? ( !arm64 ) dlang_single_target_dmd-2_107? ( !arm64 ) )
+SLOT=0
+SRC_URI=https://github.com/dlang-community/dfmt/archive/v0.15.1.tar.gz -> dfmt-0.15.1.tar.gz https://github.com/dlang-community/libdparse/archive/fe6d1e38fb4fc04323170389cfec67ed7fd4e24a.tar.gz -> libdparse-fe6d1e38fb4fc04323170389cfec67ed7fd4e24a.tar.gz https://github.com/dlang-community/stdx-allocator/archive/ae237cabd1843774cc78aad0729c914a3dd579db.tar.gz -> stdx-allocator-ae237cabd1843774cc78aad0729c914a3dd579db.tar.gz
+_eclasses_=dlang-compilers-r1	4fdf799ec97beff7e54eb7c472d9f67e	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	dlang-utils	bfcca557267f284db7bcd78106ef2842	dlang-single	5834f65cab963fec5bf1fc1490b3363d	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff
+_md5_=c56657e8d858ba4e5bcf661c75c637d6
