@@ -196,6 +196,9 @@ dmd-r1_src_compile() {
 			CUSTOM_DRUNTIME=1
 
 			# Like druntime, specifying flags removes the makefile added ones.
+			#
+			# Since 2.108.0 -DHAVE_UNISTD_H is handled by CPPFLAGS => we
+			# don't need to specify it here.
 			CFLAGS="${CFLAGS} -fPIC -std=c11 -DHAVE_UNISTD_H" # -m32/64 is added in $CC.
 
 			# Overkill but it does work. Remember that we have to
@@ -205,6 +208,9 @@ dmd-r1_src_compile() {
 			# By default builds both static+dynamic libraries.
 			$(usex static-libs 'lib dll' dll)
 		)
+		# Prefer compiling C files with CC, not with dmd. (USE_IMPORTC=1
+		# adds dependency on libdruntime.a)
+		ver_test -ge 2.108.0 && phobosMakeArgs+=( "USE_IMPORTC=0" )
 
 		emake -C dmd/druntime "${commonMakeArgs[@]}" "${druntimeMakeArgs[@]}"
 		emake -C phobos "${commonMakeArgs[@]}" "${phobosMakeArgs[@]}"
@@ -331,8 +337,9 @@ dmd-r1_src_install() {
 dmd-r1_pkg_postinst() {
 	"${EROOT}"/usr/bin/eselect dlang update dmd
 
-	use examples && elog "Examples can be found in: ${dmd_prefix}/samples"
-	use doc && elog "HTML documentation is in: /usr/share/doc/${PF}/html"
+	use examples &&
+		elog "Examples can be found in: ${EPREFIX}/usr/lib/${PN}/${SLOT}/samples"
+	use doc && elog "HTML documentation is in: ${EPREFIX}/usr/share/doc/${PF}/html"
 
 	optfeature "additional D development tools" "dev-util/dlang-tools"
 }

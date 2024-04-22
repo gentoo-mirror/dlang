@@ -44,6 +44,7 @@ readonly _DLANG_DMD_FRONTENDS=(
 	"2.105 2.105 ~amd64 ~x86"
 	"2.106 2.106 ~amd64 ~x86"
 	"2.107 2.107 ~amd64 ~x86"
+	"2.108 2.108 ~amd64 ~x86"
 )
 
 # @ECLASS_VARIABLE: _DLANG_GDC_FRONTENDS
@@ -91,6 +92,7 @@ readonly _DLANG_LDC2_FRONTENDS=(
 	"1.34 2.104 ~amd64 ~arm64 ~x86"
 	"1.35 2.105 ~amd64 ~arm64 ~x86"
 	"1.36 2.106 ~amd64 ~arm64 ~x86"
+	"1.37 2.107 ~amd64 ~arm64 ~x86"
 )
 
 # @FUNCTION: _dlang_accumulate_implementations
