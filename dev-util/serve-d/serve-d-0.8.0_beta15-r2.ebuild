@@ -50,15 +50,14 @@ https://code.dlang.org/packages/vibe-core/2.2.0.zip -> vibe-core-2.2.0.zip
 https://code.dlang.org/packages/vibe-d/0.9.6.zip -> vibe-d-0.9.6.zip
 https://code.dlang.org/packages/xdgpaths/0.2.5.zip -> xdgpaths-0.2.5.zip
 "
-
+S="${WORKDIR}/${PN}-${MY_VER}"
 LICENSE="MIT"
 LICENSE+=" Apache-2.0 BSD-2 BSD Boost-1.0 GPL-3 ISC LGPL-3 MIT public-domain Unlicense || ( openssl SSLeay )"
-S="${WORKDIR}/${PN}-${MY_VER}"
 SLOT="0"
 KEYWORDS="~amd64"
 
 # gdc currently fails due to a bug in mir-cpuid, see: https://github.com/libmir/mir-cpuid/pull/46
-DLANG_COMPAT=( dmd-2_{106..107} ldc2-1_{35..36} )
+DLANG_COMPAT=( dmd-2_{106..108} ldc2-1_{35..37} )
 
 CHECKREQS_MEMORY="10G" # mir is a chonker
 
