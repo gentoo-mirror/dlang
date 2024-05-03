@@ -13,5 +13,5 @@ REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/dub/tar.gz/v1.36.0 -> dub-1.36.0.tar.gz test? ( https://code.dlang.org/packages/gitcompatibledubpackage/1.0.1.zip -> gitcompatibledubpackage-1.0.1.zip https://code.dlang.org/packages/gitcompatibledubpackage/1.0.4.zip -> gitcompatibledubpackage-1.0.4.zip https://code.dlang.org/packages/urld/2.1.1.zip -> urld-2.1.1.zip )
-_eclasses_=dlang-compilers-r1	2f7b0194a568c93b2ab3d0a162675624	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	dlang-utils	2d013015d2a57356b46d37ef41e0e28b	dlang-single	5834f65cab963fec5bf1fc1490b3363d	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	shell-completion	bb7eb6bc232cd6c4bf8af739cdd2ee14
+_eclasses_=dlang-compilers-r1	2f7b0194a568c93b2ab3d0a162675624	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	e56c7649b804f051623c8bc1a1c44084	dlang-utils	97f464701fd98de77436e1ebdee09322	dlang-single	5834f65cab963fec5bf1fc1490b3363d	bash-completion-r1	f5e7a020fd9c741740756aac61bf75ff	shell-completion	bb7eb6bc232cd6c4bf8af739cdd2ee14
 _md5_=db904825f3288341c2aecea5fe35afed
