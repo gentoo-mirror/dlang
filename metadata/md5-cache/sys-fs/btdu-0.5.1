@@ -1,0 +1,17 @@
+BDEPEND=>=dev-util/dub-1.38.0 app-arch/unzip dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_dmd-2_108? ( dev-lang/dmd:2.108= ) dlang_single_target_dmd-2_109? ( dev-lang/dmd:2.109= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) dlang_single_target_ldc2-1_37? ( dev-lang/ldc2:1.37= ) dlang_single_target_ldc2-1_38? ( dev-lang/ldc2:1.38= ) dlang_single_target_ldc2-1_39? ( dev-lang/ldc2:1.39= )
+DEFINED_PHASES=compile install setup test unpack
+DEPEND=sys-libs/zlib sys-libs/ncurses:= dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_dmd-2_108? ( dev-lang/dmd:2.108= ) dlang_single_target_dmd-2_109? ( dev-lang/dmd:2.109= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) dlang_single_target_ldc2-1_37? ( dev-lang/ldc2:1.37= ) dlang_single_target_ldc2-1_38? ( dev-lang/ldc2:1.38= ) dlang_single_target_ldc2-1_39? ( dev-lang/ldc2:1.39= )
+DESCRIPTION=Sampling disk usage profiler for btrfs
+EAPI=8
+HOMEPAGE=https://github.com/CyberShadow/btdu
+INHERIT=dlang-single dub
+IUSE=dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_dmd-2_108 dlang_single_target_dmd-2_109 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 dlang_single_target_ldc2-1_37 dlang_single_target_ldc2-1_38 dlang_single_target_ldc2-1_39
+KEYWORDS=~amd64
+LICENSE=GPL-2 Boost-1.0 GPL-2 MIT MPL-2.0
+RDEPEND=sys-libs/zlib sys-libs/ncurses:= dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_dmd-2_108? ( dev-lang/dmd:2.108= ) dlang_single_target_dmd-2_109? ( dev-lang/dmd:2.109= ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) dlang_single_target_ldc2-1_37? ( dev-lang/ldc2:1.37= ) dlang_single_target_ldc2-1_38? ( dev-lang/ldc2:1.38= ) dlang_single_target_ldc2-1_39? ( dev-lang/ldc2:1.39= )
+REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_dmd-2_108 dlang_single_target_dmd-2_109 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 dlang_single_target_ldc2-1_37 dlang_single_target_ldc2-1_38 dlang_single_target_ldc2-1_39 ) )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://code.dlang.org/packages/ae/0.0.3236.zip -> ae-0.0.3236.zip https://code.dlang.org/packages/btdu/0.5.1.zip -> btdu-0.5.1.zip https://code.dlang.org/packages/btrfs/0.0.18.zip -> btrfs-0.0.18.zip https://code.dlang.org/packages/emsi_containers/0.9.0.zip -> emsi_containers-0.9.0.zip https://code.dlang.org/packages/ncurses/1.0.0.zip -> ncurses-1.0.0.zip
+_eclasses_=dlang-compilers-r1	3e8c8f478d2df4e9a16fad88d8e4a4a9	multilib	c19072c3cd7ac5cb21de013f7e9832e0	toolchain-funcs	333970c740aa7b1a92e4fcdc52f612bd	dlang-utils	97f464701fd98de77436e1ebdee09322	dlang-single	5834f65cab963fec5bf1fc1490b3363d	edo	367e103a74bf77e6a8da7894d999fa3c	dub	2fa5c563fd43466f161ba97341c4f116
+_md5_=01c7db0f415ab2f3202ad27d06f48353
