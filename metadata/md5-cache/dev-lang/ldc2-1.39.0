@@ -13,6 +13,6 @@ RDEPEND=dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_targ
 REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_dmd-2_108 dlang_single_target_dmd-2_109 dlang_single_target_gdc-13 dlang_single_target_gdc-14 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 dlang_single_target_ldc2-1_37 dlang_single_target_ldc2-1_38 dlang_single_target_ldc2-1_39 ) ) ^^ ( llvm_slot_15 llvm_slot_16 llvm_slot_17 llvm_slot_18 )
 RESTRICT=!test? ( test )
 SLOT=1.39/0
-SRC_URI=https://github.com/ldc-developers/ldc/releases/download/v1.39.0/ldc-1.39.0-src.tar.gz
+SRC_URI=https://github.com/ldc-developers/ldc/releases/download/v1.39.0/ldc-1.39.0-src.tar.gz https://github.com/the-horo/ldc-patches/archive/refs/tags/1.39.0-patches-1.tar.gz -> ldc2-1.39.0-patches-1.tar.gz
 _eclasses_=toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	multilib	7e1347c006a76bb812f3a9f663b79991	flag-o-matic	fa33e3696fe4689dda7e9affe92e2c94	multiprocessing	e644caa6eb7ce7e5ab0864383ac13ad9	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	5465aed08f1dfc2a75f14cbea4272961	cmake	10a50dfaf728b802fcfd37f8d0da9056	llvm-utils	e59dc622da7e7e7f16879105bed34858	llvm-r1	aee9ccb15d2aee00819d8784fa242ac3	out-of-source-utils	a0eb740debe3d472355e8bc52f62e0ac	multibuild	45df57b1877333d70a9e894f6c8fdb3a	multilib-build	8cdc28ee17e24f9f57730a28fe166a21	python-utils-r1	6881b056477c23167d9a6b33e146374e	python-any-r1	5af215c3da6aef17a2d5e02968df1d5a	dlang-compilers-r1	3e8c8f478d2df4e9a16fad88d8e4a4a9	dlang-utils	97f464701fd98de77436e1ebdee09322	dlang-single	5834f65cab963fec5bf1fc1490b3363d
-_md5_=69916d80737a7f8c50af72460c871f61
+_md5_=b055fe40e9314f7603c994b703f679ae
