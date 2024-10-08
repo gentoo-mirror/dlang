@@ -8,5 +8,5 @@ LICENSE=GPL-3
 RDEPEND=net-misc/onedrive dev-python/requests dev-python/pyside6[gui(+),webengine(+),widgets(+)]
 SLOT=0
 SRC_URI=https://github.com/bpozdena/OneDriveGUI/archive/refs/tags/v1.0.3.tar.gz -> onedrivegui.tar.gz
-_eclasses_=desktop	56973babb9c5f19cab0eeb53ece644c6
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed
 _md5_=cb73dc674cf16a7b1cb5cac61e5843da

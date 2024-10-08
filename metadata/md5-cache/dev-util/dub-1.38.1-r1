@@ -13,5 +13,5 @@ REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/dub/tar.gz/v1.38.1 -> dub-1.38.1.tar.gz test? ( https://code.dlang.org/packages/gitcompatibledubpackage/1.0.1.zip -> gitcompatibledubpackage-1.0.1.zip https://code.dlang.org/packages/gitcompatibledubpackage/1.0.4.zip -> gitcompatibledubpackage-1.0.4.zip https://code.dlang.org/packages/urld/2.1.1.zip -> urld-2.1.1.zip )
-_eclasses_=dlang-compilers-r1	3e8c8f478d2df4e9a16fad88d8e4a4a9	multilib	7e1347c006a76bb812f3a9f663b79991	toolchain-funcs	948855ec7ad9f11351edf9066708dfa9	dlang-utils	97f464701fd98de77436e1ebdee09322	dlang-single	5834f65cab963fec5bf1fc1490b3363d	edo	367e103a74bf77e6a8da7894d999fa3c	dub	2fa5c563fd43466f161ba97341c4f116	bash-completion-r1	3047612be964ffd4a549447fc4289f12	shell-completion	bb7eb6bc232cd6c4bf8af739cdd2ee14
+_eclasses_=dlang-compilers-r1	3e8c8f478d2df4e9a16fad88d8e4a4a9	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	d3d42b22a610ce81c267b644bcec9b87	dlang-utils	97f464701fd98de77436e1ebdee09322	dlang-single	5834f65cab963fec5bf1fc1490b3363d	edo	367e103a74bf77e6a8da7894d999fa3c	dub	2fa5c563fd43466f161ba97341c4f116	bash-completion-r1	767861f3744f589ee5291c1698b1c082	shell-completion	0b655d0d825e157a5e99c463bddaac16
 _md5_=d8138d726cea3c975e4337b6717e6d5e
