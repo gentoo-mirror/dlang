@@ -1,12 +1,11 @@
-BDEPEND=>=dev-vcs/git-1.8.2.1[curl]
-DEFINED_PHASES=install unpack
+DEFINED_PHASES=install
 DESCRIPTION=A simple GUI for OneDrive Linux client, with multi-account support.
 EAPI=7
 HOMEPAGE=https://github.com/bpozdena/OneDriveGUI
-INHERIT=desktop git-r3
+INHERIT=desktop
 LICENSE=GPL-3
-PROPERTIES=live
 RDEPEND=>=net-misc/onedrive-2.5.3 dev-python/requests dev-python/pyside6[gui(+),webengine(+),widgets(+)]
 SLOT=0
-_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	git-r3	875eb471682d3e1f18da124be97dcc81
-_md5_=9b2438330aa15a2d123c2dac72494bd6
+SRC_URI=https://github.com/bpozdena/OneDriveGUI/archive/refs/tags/v1.1.1.tar.gz -> onedrivegui-1.1.1.tar.gz
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed
+_md5_=ab2f86c4044b5b5f366cff1404ccfb8e
