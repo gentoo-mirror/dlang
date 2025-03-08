@@ -10,7 +10,7 @@ dev-util/dscanner 0.15.2 0.16.0_beta4: Swiss-army knife for D source code
 dev-util/dub 1.35.1 1.37.0 1.38.1 1.38.1-r1: Package and build management system for D
 dev-util/gdmd 11 12 13 14: Wrapper script for gdc that emulates the dmd command
 dev-util/serve-d 0.8.0_beta15-r2 0.8.0_beta17: Microsoft language server protocol implementation for D
-net-misc/onedrive 2.4.25 2.4.25-r1 2.5.3: Free Client for OneDrive on Linux
+net-misc/onedrive 2.4.25 2.4.25-r1 2.5.3 2.5.4: Free Client for OneDrive on Linux
 net-misc/onedrivegui 1.0.3-r2 1.1.1-r1 9999: A simple GUI for OneDrive Linux client, with multi-account support.
 net-misc/onedrivegui-bin 1.0.3-r2 1.1.1-r1: A simple GUI for OneDrive Linux client, with multi-account support.
 sys-fs/btdu 0.5.1: Sampling disk usage profiler for btrfs
