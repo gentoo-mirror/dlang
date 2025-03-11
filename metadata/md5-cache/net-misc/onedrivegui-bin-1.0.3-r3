@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst postrm
+DESCRIPTION=A simple GUI for OneDrive Linux client, with multi-account support.
+EAPI=8
+HOMEPAGE=https://github.com/bpozdena/OneDriveGUI
+INHERIT=desktop xdg-utils
+KEYWORDS=-* ~amd64
+LICENSE=GPL-3
+RDEPEND=<net-misc/onedrive-2.5 !net-misc/onedrivegui sys-fs/fuse:0
+RESTRICT=strip test
+SLOT=0
+SRC_URI=https://github.com/bpozdena/OneDriveGUI/releases/download/v1.0.3/OneDriveGUI-1.0.3_fix150-x86_64.AppImage -> onedrivegui-bin-1.0.3.AppImage https://raw.githubusercontent.com/bpozdena/OneDriveGUI/refs/tags/v1.0.3/src/resources/images/OneDriveGUI.png -> OneDriveGUI-1.0.3.png
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_md5_=ed9900e6d8a51f35e98782e01bc08003
