@@ -13,5 +13,5 @@ REQUIRED_USE=( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 
 RESTRICT=test
 SLOT=0
 SRC_URI=https://codeload.github.com/abraunegg/onedrive/tar.gz/v2.4.25 -> onedrive-2.4.25.tar.gz
-_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	bash-completion-r1	767861f3744f589ee5291c1698b1c082	dlang-compilers-r1	1385ebe6e313af6fbb80ec452c53f51a	multilib	b2a329026f2e404e9e371097dda47f96	dlang-utils	0360c6503c99ea5e66de624c077f669b	dlang-single	5834f65cab963fec5bf1fc1490b3363d	systemd	a964c0cbe818b5729da1dbfcee5be861
+_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	bash-completion-r1	767861f3744f589ee5291c1698b1c082	dlang-compilers-r1	dd686fab54c5abf9e56d82230e587496	multilib	b2a329026f2e404e9e371097dda47f96	dlang-utils	c923c229fbfecbedb638e86cb7ae653f	dlang-single	5834f65cab963fec5bf1fc1490b3363d	systemd	a964c0cbe818b5729da1dbfcee5be861
 _md5_=c69dbbf60891bba77a1d3371280210f4
