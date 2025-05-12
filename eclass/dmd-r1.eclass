@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: dmd-r1.eclass
@@ -37,6 +37,13 @@ MULTILIB_COMPAT=( abi_x86_{32,64} )
 
 inherit desktop edos2unix dlang-single multilib-build multiprocessing optfeature
 
+# @FUNCTION: _have_examples
+# @INTERNAL
+# @RETURN: shell true if the package version has the samples folder
+_have_examples() {
+	ver_test -lt 2.111.0_beta1
+}
+
 LICENSE=Boost-1.0
 # A couple of files are public domain, e.g. dmd/compiler/src/dmd/backend/bcomplex.d
 LICENSE+=" public-domain"
@@ -59,7 +66,7 @@ fi
 # dmd/compiler/samples/d2html.d has a license which sounds like the colt
 # license which is not free. The file has little value so it won't be
 # installed.
-LICENSE+=" examples? ( public-domain )"
+_have_examples && LICENSE+=" examples? ( public-domain )"
 
 SLOT=$(ver_cut 1-2)
 readonly MAJOR=$(ver_cut 1)
@@ -89,6 +96,10 @@ if [[ ${PV} != *9999* ]]; then
 		https://github.com/dlang/${PN}/archive/refs/tags/v${MY_VER}.tar.gz -> ${PN}-${MY_VER}.tar.gz
 		https://github.com/dlang/phobos/archive/refs/tags/v${MY_VER}.tar.gz -> phobos-${MY_VER}.tar.gz
 	"
+	if ver_test -ge 2.110.0; then
+		man_pages_uri="https://github.com/the-horo/distfiles/releases/download/init"
+		SRC_URI+=" ${man_pages_uri}/${PN}-man-pages-${PV}.tar.xz"
+	fi
 else
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/dlang/dmd"
@@ -97,7 +108,8 @@ else
 fi
 
 SRC_URI+=" selfhost? ( $(_gen_dmd_tarball_uri "${MY_BOOTSTRAP_VER}") )"
-IUSE="examples +selfhost static-libs"
+IUSE="+selfhost static-libs"
+_have_examples && IUSE+=" examples"
 
 if [[ ${PV} != *9999* ]]; then
 	SRC_URI+=" doc? ( $(_gen_dmd_tarball_uri "${MY_VER}") )"
@@ -118,6 +130,8 @@ RDEPEND="
 	net-misc/curl[${MULTILIB_USEDEP}]
 	!selfhost? ( ${DLANG_DEPS} )
 "
+
+MAN_PAGES_S="${WORKDIR}/${PN}-man-pages-${PV}"
 
 dmd-r1_pkg_setup() {
 	if use !selfhost; then
@@ -261,21 +275,27 @@ dmd-r1_src_compile() {
 
 	_dmd_foreach_abi compile_libraries
 
-	# Build the man pages
-	local cmd=(
-		env
-		VERBOSE=1
-		HOST_DMD="${GENERATED_DMD}"
-		"${BUILD_D}"
-		-j$(makeopts_jobs)
-		man
-		# ${GENERATED_DMD} is not yet fully functional as we didn't
-		# create a good dmd.conf. But instead of doing that we're going
-		# to specify our flags here.
-		DFLAGS="-defaultlib=phobos2 -L-rpath=${S}/phobos/generated/linux/release/$(dlang_get_abi_bits)"
-	)
-	echo "${cmd[@]}"
-	"${cmd[@]}" || die "Could not generate man pages"
+	if [[ ${PV} == *9999* ]] || ver_test -lt 2.110.0 ; then
+		# Build the man pages
+		local cmd=(
+			env
+			VERBOSE=1
+			HOST_DMD="${GENERATED_DMD}"
+			"${BUILD_D}"
+			-j$(makeopts_jobs)
+			man
+			# ${GENERATED_DMD} is not yet fully functional as we didn't
+			# create a good dmd.conf. But instead of doing that we're going
+			# to specify our flags here.
+			DFLAGS="-defaultlib=phobos2 -L-rpath=${S}/phobos/generated/linux/release/$(dlang_get_abi_bits)"
+		)
+		echo "${cmd[@]}"
+		"${cmd[@]}" || die "Could not generate man pages"
+
+		# Place them in a predictable directory
+		mkdir "${MAN_PAGES_S}" || die
+		cp dmd/generated/docs/man/{man1/dmd.1,man5/dmd.conf.5} "${MAN_PAGES_S}" || die
+	fi
 
 	# Now clean up some artifacts that would make the install phase
 	# harder (we rely on globbing and recursive calls a lot).
@@ -291,6 +311,18 @@ dmd-r1_src_test() {
 	# As opposed to old dmd.eclass we have access to actual tests. For
 	# porting reasons we're going to keep only the old test,
 	# hello_world.
+	cat <<-EOF > "${T}/hello.d"
+	import std.stdio;
+
+	void main(string[] args) {
+		writeln("hello world");
+		writefln("args.length = %d", args.length);
+
+		foreach (index, arg; args) {
+			writefln("args[%d] = '%s'", index, arg);
+		}
+	}
+EOF
 
 	test_hello_world() {
 		local phobosDir=${S}/phobos/generated/linux/release/${MODEL}
@@ -308,13 +340,12 @@ dmd-r1_src_test() {
 			-Idmd/druntime/import
 		)
 
-		"${GENERATED_DMD}" "${commandArgs[@]}" dmd/compiler/samples/hello.d \
+		"${GENERATED_DMD}" "${commandArgs[@]}" "${T}/hello.d" \
 			|| die "Failed to build hello.d (${MODEL}-bit)"
 		./hello ${MODEL}-bit || die "Failed to run test sample (${MODEL}-bit)"
 	}
 
 	_dmd_foreach_abi test_hello_world
-
 }
 
 dmd-r1_src_install() {
@@ -358,11 +389,11 @@ dmd-r1_src_install() {
 	doins -r phobos/{etc,std}
 
 	insinto "${dmd_prefix}"/man/man1
-	doins dmd/generated/docs/man/man1/dmd.1
+	doins "${MAN_PAGES_S}"/dmd.1
 	insinto "${dmd_prefix}"/man/man5
-	doins dmd/generated/docs/man/man5/dmd.conf.5
+	doins "${MAN_PAGES_S}"/dmd.conf.5
 
-	if use examples; then
+	if _use_examples; then
 		# Problematic license
 		rm dmd/compiler/samples/d2html.d || die
 
@@ -386,7 +417,7 @@ dmd-r1_src_install() {
 dmd-r1_pkg_postinst() {
 	"${EROOT}"/usr/bin/eselect dlang update dmd
 
-	use examples &&
+	_use_examples &&
 		elog "Examples can be found in: ${EPREFIX}/usr/lib/${PN}/${SLOT}/samples"
 	_use_doc && elog "HTML documentation is in: ${EPREFIX}/usr/share/doc/${PF}/html"
 
@@ -402,6 +433,13 @@ dmd-r1_pkg_postrm() {
 # @RETURN: shell true if the doc USE flag is enabled
 _use_doc() {
 	[[ ${PV} != *9999* ]] && use doc
+}
+
+# @FUNCTION: _use_examples
+# @INTERNAL
+# @RETURN: shell true if the examples use flag exists and is enabled
+_use_examples() {
+	_have_examples && use examples
 }
 
 # @FUNCTION: _gen_dmd.conf
