@@ -13,5 +13,5 @@ REQUIRED_USE=|| ( ddemangle detab dustmite rdmd ) ( ^^ ( dlang_single_target_dmd
 RESTRICT=!test? ( test )
 SLOT=0
 SRC_URI=https://codeload.github.com/dlang/tools/tar.gz/v2.111.0 -> dlang-tools-2.111.0.tar.gz
-_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	dlang-compilers-r1	dd686fab54c5abf9e56d82230e587496	toolchain-funcs	a6df79c1e9bc84369dbf3d44206ac772	multilib	b2a329026f2e404e9e371097dda47f96	dlang-utils	c923c229fbfecbedb638e86cb7ae653f	dlang-single	5834f65cab963fec5bf1fc1490b3363d	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	dlang-compilers-r1	dd686fab54c5abf9e56d82230e587496	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	b2a329026f2e404e9e371097dda47f96	dlang-utils	c923c229fbfecbedb638e86cb7ae653f	dlang-single	5834f65cab963fec5bf1fc1490b3363d	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
 _md5_=3c9bc506b913125f6af68ab4c51cd956
