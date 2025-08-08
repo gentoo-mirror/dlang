@@ -1,0 +1,15 @@
+DEFINED_PHASES=compile install postinst prepare
+DESCRIPTION=Wrapper script for gdc that emulates the dmd command
+EAPI=8
+HOMEPAGE=https://www.gdcproject.org/
+INHERIT=dlang-r1 prefix
+IUSE=dlang_targets_gdc-12 dlang_targets_gdc-13 dlang_targets_gdc-14 dlang_targets_gdc-15
+KEYWORDS=~amd64 ~arm64 ~x86
+LICENSE=GPL-3+
+RDEPEND=dev-lang/perl dlang_targets_gdc-12? ( sys-devel/gcc:12[d] !<dev-util/gdmd-12.20250807:12 ) dlang_targets_gdc-13? ( sys-devel/gcc:13[d] !<dev-util/gdmd-13.20250807:13 ) dlang_targets_gdc-14? ( sys-devel/gcc:14[d] !<dev-util/gdmd-14.20250807:14 ) dlang_targets_gdc-15? ( sys-devel/gcc:15[d] !<dev-util/gdmd-15.20250807:15 )
+REQUIRED_USE=( || ( dlang_targets_gdc-12 dlang_targets_gdc-13 dlang_targets_gdc-14 dlang_targets_gdc-15 ) )
+RESTRICT=test
+SLOT=0
+SRC_URI=https://github.com/D-Programming-GDC/gdmd/archive/d14f7301b4bbae44996bc962121c9a1e7f7e3f12.tar.gz -> gdmd-d14f7301b4bbae44996bc962121c9a1e7f7e3f12.tar.gz
+_eclasses_=out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	dlang-compilers-r1	dd686fab54c5abf9e56d82230e587496	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	b2a329026f2e404e9e371097dda47f96	dlang-utils	632b98bec382affe877f7ab465daddb2	dlang-r1	ba57899a51cf17b5c708805da3c7fd02	prefix	c3c4c93ebda319c0fa7ed6f942ba1010
+_md5_=42613ed9499b255a70800a69c664a7f4

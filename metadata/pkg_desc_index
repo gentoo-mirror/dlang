@@ -8,7 +8,7 @@ dev-util/dfmt 0.15.2: Dfmt is a formatter for D source code
 dev-util/dlang-tools 2.106.1 2.111.0: Ancilliary tools for the D programming language compiler
 dev-util/dscanner 0.16.0_beta4: Swiss-army knife for D source code
 dev-util/dub 1.40.0: Package and build management system for D
-dev-util/gdmd 11-r1 12-r1 13-r1 13.20250517 14-r1 14.20250517 15 15.20250517: Wrapper script for gdc that emulates the dmd command
+dev-util/gdmd 11-r1 12-r1 12.20250807 13-r1 13.20250807 14.20250807 15.20250807 20250807: Wrapper script for gdc that emulates the dmd command
 dev-util/serve-d 0.8.0_beta18: Microsoft language server protocol implementation for D
 net-misc/onedrive 2.5.6: Free Client for OneDrive on Linux
 net-misc/onedrivegui 1.2.1 9999: A simple GUI for OneDrive Linux client, with multi-account support.

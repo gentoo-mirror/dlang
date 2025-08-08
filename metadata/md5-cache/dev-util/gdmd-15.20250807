@@ -1,0 +1,10 @@
+DEFINED_PHASES=-
+DESCRIPTION=Don't use this package, use dev-util/gdmd:0
+EAPI=8
+HOMEPAGE=https://www.gdcproject.org/
+KEYWORDS=~amd64 ~arm64 ~x86
+LICENSE=GPL-3+
+RDEPEND=>=dev-util/gdmd-20250807:0[dlang_targets_gdc-15(-)]
+RESTRICT=test
+SLOT=15
+_md5_=0055fad34eba7cabc501cef4302a5179
