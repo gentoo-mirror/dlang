@@ -11,10 +11,10 @@ SRC_URI="https://gtkd.org/Downloads/sources/GtkD-${PV}.zip"
 LICENSE="LGPL-3+-with-gtkd-exceptions test? ( LGPL-3+ )"
 
 SLOT="3"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 MULTILIB_COMPAT=( abi_x86_{32,64} )
-DLANG_COMPAT=( dmd-2_{106..109} gdc-1{3,4} ldc2-1_{35..40} )
+DLANG_COMPAT=( dmd-2_{106..111} gdc-1{3..5} ldc2-1_{35..40} )
 declare -A DLANG_REQ_USE=(
 	[dmd]="${MULTILIB_USEDEP}"
 	[gdc]=""
@@ -48,6 +48,10 @@ GTKD_SRC_DIRS=( gtkd gtkdgl sourceview gstreamer  vte  peas)
 IUSE="${GTKD_USE_FLAGS[@]:1} static-libs test"
 RESTRICT="!test? ( test )"
 REQUIRED_USE=${DLANG_REQUIRED_USE}
+
+PATCHES=(
+	"${FILESDIR}/tests-fix-debug-integer-pr-361.patch"
+)
 
 MAJOR=$(ver_cut 1)
 MINOR=$(ver_cut 2-)
@@ -169,6 +173,21 @@ multilib_src_install_all() {
 	}
 
 	foreach_used_component install_headers
+}
+
+pkg_postinst() {
+	local have_gdc=0 u
+	for u in ${USE}; do
+		[[ ${u} != dlang_targets_gdc* ]] && continue
+
+		have_gdc=1
+		break
+	done
+
+	if [[ ${have_gdc} = 1 ]]; then
+		ewarn "Please run env-update before you use this package."
+		ewarn "gdc may not find this library until you do."
+	fi
 }
 
 foreach_used_component() {
