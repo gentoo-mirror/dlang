@@ -13,5 +13,5 @@ REQUIRED_USE=( || ( dlang_targets_dmd-2_106 dlang_targets_dmd-2_107 dlang_target
 RESTRICT=!test? ( test )
 SLOT=3
 SRC_URI=https://gtkd.org/Downloads/sources/GtkD-3.10.0.zip
-_eclasses_=out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	b2a329026f2e404e9e371097dda47f96	multilib-build	9ac26ea006828266d235e2f0135429b5	multilib-minimal	e9f54d75b074edc47d36994bbc1e2123	dlang-compilers-r1	3a28054c46e0dbcbcd0773c34920aac2	dlang-utils	632b98bec382affe877f7ab465daddb2	dlang-r1	ba57899a51cf17b5c708805da3c7fd02
+_eclasses_=out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	a199af442898963433d6f038a88cce9c	multilib-build	9ac26ea006828266d235e2f0135429b5	multilib-minimal	e9f54d75b074edc47d36994bbc1e2123	dlang-compilers-r1	3a28054c46e0dbcbcd0773c34920aac2	dlang-utils	632b98bec382affe877f7ab465daddb2	dlang-r1	ba57899a51cf17b5c708805da3c7fd02
 _md5_=96ca4503fa08237c221cf6785a9ca90b
