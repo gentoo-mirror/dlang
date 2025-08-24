@@ -1,16 +1,16 @@
-BDEPEND=!selfhost? ( dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:0[dlang_targets_gdc-13(-)] ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) )
+BDEPEND=!selfhost? ( dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:0[dlang_targets_gdc-13(-)] ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) )
 DEFINED_PHASES=compile install postinst postrm setup test unpack
 DESCRIPTION=Reference compiler for the D programming language
 EAPI=8
 HOMEPAGE=https://dlang.org/
 IDEPEND=>=app-eselect/eselect-dlang-20140709
 INHERIT=dmd-r1
-IUSE=dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 abi_x86_32 abi_x86_64 +selfhost static-libs examples doc
+IUSE=dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_36 abi_x86_32 abi_x86_64 +selfhost static-libs examples doc
 KEYWORDS=-* ~amd64 ~x86
 LICENSE=Boost-1.0 public-domain BZIP2 curl ZLIB RSA examples? ( public-domain )
-RDEPEND=>=app-eselect/eselect-dlang-20140709 net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] !selfhost? ( dlang_single_target_dmd-2_106? ( dev-lang/dmd:2.106= ) dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:0[dlang_targets_gdc-13(-)] ) dlang_single_target_ldc2-1_35? ( dev-lang/ldc2:1.35= ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) )
-REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( selfhost ( ^^ ( dlang_single_target_dmd-2_106 dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_35 dlang_single_target_ldc2-1_36 ) ) )
+RDEPEND=>=app-eselect/eselect-dlang-20140709 net-misc/curl[abi_x86_32(-)?,abi_x86_64(-)?] !selfhost? ( dlang_single_target_dmd-2_107? ( dev-lang/dmd:2.107= ) dlang_single_target_gdc-13? ( sys-devel/gcc:13[d] dev-util/gdmd:0[dlang_targets_gdc-13(-)] ) dlang_single_target_ldc2-1_36? ( dev-lang/ldc2:1.36= ) )
+REQUIRED_USE=|| ( abi_x86_32 abi_x86_64 ) ^^ ( selfhost ( ^^ ( dlang_single_target_dmd-2_107 dlang_single_target_gdc-13 dlang_single_target_ldc2-1_36 ) ) )
 SLOT=2.107
 SRC_URI=https://github.com/dlang/dmd/archive/refs/tags/v2.107.0.tar.gz -> dmd-2.107.0.tar.gz https://github.com/dlang/phobos/archive/refs/tags/v2.107.0.tar.gz -> phobos-2.107.0.tar.gz selfhost? ( https://downloads.dlang.org/releases/2.x/2.107.0/dmd.2.107.0.linux.tar.xz ) doc? ( https://downloads.dlang.org/releases/2.x/2.107.0/dmd.2.107.0.linux.tar.xz )
-_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	edos2unix	33e347e171066657f91f8b0c72ec8773	dlang-compilers-r1	3a28054c46e0dbcbcd0773c34920aac2	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	a199af442898963433d6f038a88cce9c	dlang-utils	632b98bec382affe877f7ab465daddb2	dlang-single	5834f65cab963fec5bf1fc1490b3363d	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	multilib-build	9ac26ea006828266d235e2f0135429b5	multiprocessing	1e32df7deee68372153dca65f4a7c21f	optfeature	538bce96e5589935b57e178e8635f301	dmd-r1	9baa3524ce89a6a04609f5b95a6ee35d
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	edos2unix	33e347e171066657f91f8b0c72ec8773	dlang-compilers-r1	6b94c8a374aa4bf8f1efc36454539ca6	toolchain-funcs	a0b29008c671a362b505f96fa80ce9c0	multilib	a199af442898963433d6f038a88cce9c	dlang-utils	632b98bec382affe877f7ab465daddb2	dlang-single	5834f65cab963fec5bf1fc1490b3363d	out-of-source-utils	dbf9e34ee8964084651e25907fa8f52c	multibuild	4650a65187015567b4e041bb9bfdb364	multilib-build	9ac26ea006828266d235e2f0135429b5	multiprocessing	1e32df7deee68372153dca65f4a7c21f	optfeature	538bce96e5589935b57e178e8635f301	dmd-r1	9baa3524ce89a6a04609f5b95a6ee35d
 _md5_=960a85f405808e572e376c0fbdc1a2e3
